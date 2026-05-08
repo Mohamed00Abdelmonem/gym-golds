@@ -15,6 +15,13 @@
     .testimonials-track{scrollbar-width:none}
     .testimonials-track::-webkit-scrollbar{display:none}
   </style>
+  <script>
+    (function(){
+      const saved = localStorage.getItem('goldtech.theme');
+      const theme = saved === 'light' || saved === 'dark' ? saved : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
 </head>
 <body class="antialiased page-ready">
   <div class="min-h-screen bg-[radial-gradient(circle_at_top,rgba(245,176,65,.12),transparent_24%),linear-gradient(180deg,#050506,#0d0d0f_50%,#050506)] text-white overflow-x-hidden">
@@ -25,7 +32,7 @@
           <div><div class="text-white font-black text-lg leading-none">GoldTech</div><div class="text-stone-400 text-[11px] uppercase tracking-[0.28em] mt-1">Premium Smart Gym</div></div>
         </a>
         <nav class="hidden lg:flex items-center gap-6 text-sm text-stone-300"><a href="#features" class="hover:text-white fast-trans">Features</a><a href="#trainers" class="hover:text-white fast-trans">Trainers</a><a href="#pricing" class="hover:text-white fast-trans">Pricing</a><a href="#faq" class="hover:text-white fast-trans">FAQ</a></nav>
-        <div class="flex items-center gap-3"><a href="login.html" class="hidden sm:inline-flex glass px-4 py-2.5 rounded-2xl text-sm font-semibold">Sign In</a><a href="register.html" class="bg-gold text-black px-4 py-2.5 rounded-2xl text-sm font-semibold shadow-[0_12px_40px_rgba(245,176,65,.22)]">Start Training</a></div>
+        <div class="flex items-center gap-3"><button id="themeToggle" class="hidden sm:inline-flex glass w-11 h-11 items-center justify-center rounded-2xl text-sm font-semibold" aria-label="Toggle theme" aria-pressed="false"></button><a href="login.html" class="hidden sm:inline-flex glass px-4 py-2.5 rounded-2xl text-sm font-semibold">Sign In</a><a href="register.html" class="bg-gold text-black px-4 py-2.5 rounded-2xl text-sm font-semibold shadow-[0_12px_40px_rgba(245,176,65,.22)]">Start Training</a></div>
       </div>
     </header>
 
@@ -136,6 +143,27 @@
   </div>
 
   <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcons = {
+      light: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7 7 0 1 0 9.8 9.8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+      dark: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>'
+    };
+    const syncTheme = () => {
+      const theme = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+      document.body.dataset.theme = theme;
+      localStorage.setItem('goldtech.theme', theme);
+      if(themeToggle){
+        themeToggle.innerHTML = themeIcons[theme];
+        themeToggle.setAttribute('aria-pressed', String(theme === 'light'));
+        themeToggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+      }
+    };
+    syncTheme();
+    themeToggle?.addEventListener('click', () => {
+      document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      syncTheme();
+    });
+
     const priceButtons = document.querySelectorAll('[data-price-mode]');
     const priceMap = { monthly: { starter: '$29', elite: '$79', annual: '$299' }, yearly: { starter: '$299', elite: '$799', annual: '$2,990' } };
     priceButtons.forEach((button) => {
