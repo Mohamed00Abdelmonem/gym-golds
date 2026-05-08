@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Product — GoldTech</title>
+  <script>tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#f5b041' } }, fontFamily: { display:['Poppins','Inter','system-ui','sans-serif'] } } } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({title:'Product'});
+    Components.init();
+    document.getElementById('page-content').innerHTML = `
+      <div class="glass rounded-2xl p-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4"><div class="md:col-span-2"><img src="https://images.unsplash.com/photo-1589987604482-1a4d3f6f3a6d?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="product" class="w-full h-64 object-cover rounded-xl"/></div><div class="glass p-4 rounded-xl"><div class="text-stone-400 text-xs">Gold Whey 2kg</div><div class="text-white font-extrabold text-2xl mt-2">$39.99</div><div class="mt-4 text-stone-400">High-quality whey protein for recovery and mass.</div><div class="mt-4"><button class="bg-gold text-black px-4 py-2 rounded-lg">Add to cart</button></div></div></div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

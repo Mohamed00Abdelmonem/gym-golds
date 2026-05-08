@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Achievements — GoldTech</title>
+  <script>tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#f5b041' } }, fontFamily: { display:['Poppins','Inter','system-ui','sans-serif'] } } } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({title:'Achievements'});
+    Components.init();
+    document.getElementById('page-content').innerHTML = `
+      <div class="space-y-8">
+        <div class="glass rounded-3xl p-8">
+          <div class="flex items-center justify-between mb-2"><div class="text-gold text-xs font-bold uppercase tracking-wider">Gamification</div><div class="text-stone-400 text-sm">24 badges earned</div></div>
+          <h1 class="text-3xl font-black mb-1">Your Achievements</h1>
+          <p class="text-stone-300">Track your fitness journey with badges, streaks, and milestones</p>
+        </div>
+
+        <!-- Streaks & Milestones -->
+        <div class="glass rounded-3xl p-8">
+          <h2 class="text-2xl font-black mb-6">Active Streaks & Goals</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="border-l-4 border-gold pl-6">
+              <div class="text-4xl font-black text-gold">47</div>
+              <div class="text-lg font-bold mt-2">Day Workout Streak</div>
+              <p class="text-stone-400 mt-2">You've worked out every single day! Keep the momentum going! 🔥</p>
+              <div class="mt-4 h-2 bg-white/10 rounded-full overflow-hidden"><div class="w-11/12 h-full bg-gold rounded-full"></div></div>
+            </div>
+            <div class="border-l-4 border-emerald-400 pl-6">
+              <div class="text-4xl font-black text-emerald-400">12</div>
+              <div class="text-lg font-bold mt-2">Consecutive Week Goal</div>
+              <p class="text-stone-400 mt-2">5+ workouts per week for 12 straight weeks! Almost there!</p>
+              <div class="mt-4 h-2 bg-white/10 rounded-full overflow-hidden"><div class="w-5/6 h-full bg-emerald-400 rounded-full"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badges Grid -->
+        <div class="glass rounded-3xl p-8">
+          <h2 class="text-2xl font-black mb-6">Earned Badges</h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Streak Badges -->
+            <div class="glass rounded-2xl p-6 text-center hover:scale-110 fast-trans cursor-pointer">
+              <div class="text-6xl mb-3">🔥</div>
+              <div class="font-bold text-sm">7-Day Streak</div>
+              <div class="text-stone-400 text-xs mt-1">Apr 10</div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center hover:scale-110 fast-trans cursor-pointer">
+              <div class="text-6xl mb-3">🔥</div>
+              <div class="font-bold text-sm">30-Day Streak</div>
+              <div class="text-stone-400 text-xs mt-1">Apr 20</div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center hover:scale-110 fast-trans cursor-pointer bg-gold/10 border border-gold/30">
+              <div class="text-6xl mb-3">🔥</div>
+              <div class="font-bold text-sm">47-Day Streak</div>
+              <div class="text-gold text-xs mt-1">CURRENT</div>
+            </div>
+
+            <!-- Strength Badges -->
+            <div class="glass rounded-2xl p-6 text-center hover:scale-110 fast-trans cursor-pointer">
+              <div class="text-6xl mb-3">💪</div>
+              <div class="font-bold text-sm">Bench 100kg</div>
+              <div class="text-stone-400 text-xs mt-1">Mar 5</div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center hover:scale-110 fast-trans cursor-pointer">
+              <div class="text-6xl mb-3">💪</div>
+              <div class="font-bold text-sm">Deadlift 150kg</div>
+              <div class="text-stone-400 text-xs mt-1">Apr 12</div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center hover:scale-110 fast-trans cursor-pointer bg-gold/10 border border-gold/30">
+              <div class="text-6xl mb-3">💪</div>
+              <div class="font-bold text-sm">Squat 160kg</div>
+              <div class="text-gold text-xs mt-1">PERSONAL BEST</div>
+            </div>
+
+            <!-- Body Transformation -->
+            <div class="glass rounded-2xl p-6 text-center hover:scale-110 fast-trans cursor-pointer">
+              <div class="text-6xl mb-3">📉</div>
+              <div class="font-bold text-sm">10kg Lost</div>
+              <div class="text-stone-400 text-xs mt-1">Mar 15</div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center hover:scale-110 fast-trans cursor-pointer">
+              <div class="text-6xl mb-3">💪</div>
+              <div class="font-bold text-sm">Muscle Gain</div>
+              <div class="text-stone-400 text-xs mt-1">+2.5kg</div>
+            </div>
+
+            <!-- Consistency -->
+            <div class="glass rounded-2xl p-6 text-center hover:scale-110 fast-trans cursor-pointer">
+              <div class="text-6xl mb-3">🎯</div>
+              <div class="font-bold text-sm">50 Workouts</div>
+              <div class="text-stone-400 text-xs mt-1">Apr 8</div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center hover:scale-110 fast-trans cursor-pointer">
+              <div class="text-6xl mb-3">⭐</div>
+              <div class="font-bold text-sm">100 Workouts</div>
+              <div class="text-stone-400 text-xs mt-1">Next Goal</div>
+            </div>
+
+            <!-- Special Achievements -->
+            <div class="glass rounded-2xl p-6 text-center hover:scale-110 fast-trans cursor-pointer">
+              <div class="text-6xl mb-3">🏆</div>
+              <div class="font-bold text-sm">Trainer Session</div>
+              <div class="text-stone-400 text-xs mt-1">Apr 5</div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center hover:scale-110 fast-trans cursor-pointer">
+              <div class="text-6xl mb-3">📱</div>
+              <div class="font-bold text-sm">App Expert</div>
+              <div class="text-stone-400 text-xs mt-1">All Features Used</div>
+            </div>
+
+            <!-- Community -->
+            <div class="glass rounded-2xl p-6 text-center hover:scale-110 fast-trans cursor-pointer">
+              <div class="text-6xl mb-3">👥</div>
+              <div class="font-bold text-sm">Social Butterfly</div>
+              <div class="text-stone-400 text-xs mt-1">10+ Friends</div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center hover:scale-110 fast-trans cursor-pointer">
+              <div class="text-6xl mb-3">✅</div>
+              <div class="font-bold text-sm">Milestone Reached</div>
+              <div class="text-stone-400 text-xs mt-1">Every 25 workouts</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leaderboard -->
+        <div class="glass rounded-3xl p-8">
+          <h2 class="text-2xl font-black mb-6">Monthly Leaderboard</h2>
+          <div class="space-y-3">
+            <div class="glass rounded-xl p-4 flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center font-black text-gold">1</div>
+                <div><div class="font-bold">You</div><div class="text-stone-400 text-sm">47-day streak • 2,850 kcal</div></div>
+              </div>
+              <div class="text-gold font-black text-xl">1,280 pts</div>
+            </div>
+            <div class="glass rounded-xl p-4 flex items-center justify-between opacity-60">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center font-black">2</div>
+                <div><div class="font-bold">James M.</div><div class="text-stone-400 text-sm">32-day streak • Upper/Lower</div></div>
+              </div>
+              <div class="text-stone-400 font-black text-xl">1,125 pts</div>
+            </div>
+            <div class="glass rounded-xl p-4 flex items-center justify-between opacity-60">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center font-black">3</div>
+                <div><div class="font-bold">Sarah T.</div><div class="text-stone-400 text-sm">28-day streak • HIIT Fat Loss</div></div>
+              </div>
+              <div class="text-stone-400 font-black text-xl">985 pts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

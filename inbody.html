@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>InBody Analytics — GoldTech</title>
+  <script>tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#f5b041' } }, fontFamily: { display:['Poppins','Inter','system-ui','sans-serif'] } } } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({title:'InBody Analytics'});
+    Components.init();
+    document.getElementById('page-content').innerHTML = `
+      <div class="space-y-8">
+        <div class="glass rounded-3xl p-8">
+          <div class="text-gold text-xs font-bold uppercase tracking-wider mb-2">Body Composition Analysis</div>
+          <h1 class="text-3xl font-black mb-1">InBody Scan Results</h1>
+          <p class="text-stone-300">Detailed body composition analysis from your latest InBody scan</p>
+        </div>
+
+        <!-- Latest Scan -->
+        <div class="glass rounded-3xl p-8">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-black">Latest Scan - April 26, 2026</h2>
+            <button class="bg-gold text-black px-6 py-3 rounded-xl font-bold hover:scale-105 fast-trans">Schedule Scan</button>
+          </div>
+
+          <!-- Main Metrics -->
+          <div class="grid md:grid-cols-4 gap-4 mb-8">
+            <div class="glass rounded-2xl p-6 text-center border border-gold/30">
+              <div class="text-3xl font-black text-gold mb-2">77.2kg</div>
+              <div class="text-stone-400 text-sm">Total Body Weight</div>
+              <div class="text-emerald-400 text-xs mt-3">↓ 2.8kg from last scan</div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <div class="text-3xl font-black text-emerald-400 mb-2">17.2%</div>
+              <div class="text-stone-400 text-sm">Body Fat %</div>
+              <div class="text-emerald-400 text-xs mt-3">↓ 0.8% improvement</div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <div class="text-3xl font-black text-sky-400 mb-2">60.8kg</div>
+              <div class="text-stone-400 text-sm">Muscle Mass</div>
+              <div class="text-emerald-400 text-xs mt-3">↑ 1.2kg gained</div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <div class="text-3xl font-black mb-2">23.1</div>
+              <div class="text-stone-400 text-sm">BMI</div>
+              <div class="text-emerald-400 text-xs mt-3">Healthy range</div>
+            </div>
+          </div>
+
+          <!-- Detailed Breakdown -->
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="font-black text-lg mb-4">Body Composition</h3>
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between mb-2"><span>Muscle Mass</span><span class="text-sky-400">60.8kg</span></div>
+                  <div class="h-3 bg-white/10 rounded-full overflow-hidden"><div class="w-4/5 h-full bg-sky-400 rounded-full"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2"><span>Body Fat</span><span class="text-orange-400">13.3kg</span></div>
+                  <div class="h-3 bg-white/10 rounded-full overflow-hidden"><div class="w-1/4 h-full bg-orange-400 rounded-full"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2"><span>Bone Mass</span><span class="text-stone-400">3.1kg</span></div>
+                  <div class="h-3 bg-white/10 rounded-full overflow-hidden"><div class="w-1/12 h-full bg-stone-500 rounded-full"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="font-black text-lg mb-4">Segmental Analysis</h3>
+              <div class="space-y-3">
+                <div class="glass rounded-lg p-3 flex justify-between">
+                  <span class="text-stone-400">Right Arm</span>
+                  <span class="font-bold">3.8kg muscle</span>
+                </div>
+                <div class="glass rounded-lg p-3 flex justify-between">
+                  <span class="text-stone-400">Left Arm</span>
+                  <span class="font-bold">3.7kg muscle</span>
+                </div>
+                <div class="glass rounded-lg p-3 flex justify-between">
+                  <span class="text-stone-400">Torso</span>
+                  <span class="font-bold">26.4kg muscle</span>
+                </div>
+                <div class="glass rounded-lg p-3 flex justify-between">
+                  <span class="text-stone-400">Right Leg</span>
+                  <span class="font-bold">13.2kg muscle</span>
+                </div>
+                <div class="glass rounded-lg p-3 flex justify-between">
+                  <span class="text-stone-400">Left Leg</span>
+                  <span class="font-bold">13.5kg muscle</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress Over Time -->
+        <div class="glass rounded-3xl p-8">
+          <h2 class="text-2xl font-black mb-6">Progress Over 12 Weeks</h2>
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div>
+              <div class="text-sm font-bold text-stone-400 mb-4">Body Weight</div>
+              <div class="flex items-end gap-1 h-40">
+                <div class="flex-1 h-1/5 bg-white/20 rounded-t text-center text-xs p-1">80.0</div>
+                <div class="flex-1 h-4/12 bg-white/20 rounded-t text-center text-xs p-1">79.2</div>
+                <div class="flex-1 h-5/12 bg-white/20 rounded-t text-center text-xs p-1">78.8</div>
+                <div class="flex-1 h-6/12 bg-gold/60 rounded-t text-center text-xs p-1">77.2</div>
+              </div>
+              <div class="text-stone-400 text-xs mt-2 text-center">80kg → 77.2kg (-2.8kg)</div>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-stone-400 mb-4">Body Fat %</div>
+              <div class="flex items-end gap-1 h-40">
+                <div class="flex-1 h-4/5 bg-orange-400/40 rounded-t text-center text-xs p-1">19.2%</div>
+                <div class="flex-1 h-3/4 bg-orange-400/40 rounded-t text-center text-xs p-1">18.4%</div>
+                <div class="flex-1 h-2/3 bg-orange-400/40 rounded-t text-center text-xs p-1">18.0%</div>
+                <div class="flex-1 h-2/5 bg-emerald-400 rounded-t text-center text-xs p-1">17.2%</div>
+              </div>
+              <div class="text-stone-400 text-xs mt-2 text-center">19.2% → 17.2% (-2.0%)</div>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-stone-400 mb-4">Muscle Mass</div>
+              <div class="flex items-end gap-1 h-40">
+                <div class="flex-1 h-3/5 bg-sky-400/40 rounded-t text-center text-xs p-1">58.6</div>
+                <div class="flex-1 h-2/3 bg-sky-400/40 rounded-t text-center text-xs p-1">59.2</div>
+                <div class="flex-1 h-4/5 bg-sky-400/40 rounded-t text-center text-xs p-1">59.6</div>
+                <div class="flex-1 h-full bg-sky-400 rounded-t text-center text-xs p-1">60.8</div>
+              </div>
+              <div class="text-stone-400 text-xs mt-2 text-center">58.6kg → 60.8kg (+2.2kg)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Health Indicators -->
+        <div class="glass rounded-3xl p-8">
+          <h2 class="text-2xl font-black mb-6">Health Indicators</h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="glass rounded-xl p-4">
+              <div class="font-bold mb-2">Metabolic Age</div>
+              <div class="text-2xl font-black text-gold">24 years</div>
+              <p class="text-stone-400 text-sm mt-2">Your body composition suggests you're younger than your calendar age!</p>
+            </div>
+            <div class="glass rounded-xl p-4">
+              <div class="font-bold mb-2">Muscle Control</div>
+              <div class="text-2xl font-black text-emerald-400">Excellent</div>
+              <p class="text-stone-400 text-sm mt-2">Your muscle distribution is well-balanced and symmetric.</p>
+            </div>
+            <div class="glass rounded-xl p-4">
+              <div class="font-bold mb-2">Protein Balance</div>
+              <div class="text-2xl font-black text-sky-400">+3.5%</div>
+              <p class="text-stone-400 text-sm mt-2">Above average muscle protein content. Keep training!</p>
+            </div>
+            <div class="glass rounded-xl p-4">
+              <div class="font-bold mb-2">Impedance</div>
+              <div class="text-2xl font-black text-orange-400">548Ω</div>
+              <p class="text-stone-400 text-sm mt-2">Excellent hydration and cellular health indicated.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="glass rounded-3xl p-8 border border-gold/30">
+          <h2 class="text-2xl font-black mb-4 text-gold">AI Recommendations</h2>
+          <div class="space-y-3">
+            <div class="flex gap-3"><span class="text-gold">✓</span><span>Continue your current program - you're losing fat while building muscle!</span></div>
+            <div class="flex gap-3"><span class="text-gold">✓</span><span>Focus on leg development - slight imbalance detected between left and right</span></div>
+            <div class="flex gap-3"><span class="text-gold">✓</span><span>Increase protein intake to 165g daily to maximize muscle gain</span></div>
+            <div class="flex gap-3"><span class="text-gold">✓</span><span>Schedule your next scan in 4 weeks to track progress</span></div>
+          </div>
+        </div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>QR Machines — GoldTech</title>
+  <script>tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#f5b041' } }, fontFamily: { display:['Poppins','Inter','system-ui','sans-serif'] } } } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({title:'QR Machine Scanner'});
+    Components.init();
+    document.getElementById('page-content').innerHTML = `
+      <div class="glass rounded-2xl p-6">
+        <div class="text-stone-400 text-xs">Machine Scanner</div>
+        <div class="text-white font-extrabold text-lg mt-2">Scan a machine QR to load tutorial</div>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4"><div class="glass p-4 rounded-lg"><div class="text-stone-400 text-xs">Scanner</div><div class="mt-2"><button class="bg-gold text-black px-3 py-2 rounded-lg">Open Camera</button></div></div><div class="glass p-4 rounded-lg"><div class="text-stone-400 text-xs">Recent</div><ul class="text-stone-400 mt-2"><li>Machine M-231 — Chest Press</li><li>Machine L-09 — Leg Press</li></ul></div><div class="glass p-4 rounded-lg"><div class="text-stone-400 text-xs">Safety</div><div class="text-stone-400 mt-2">Keep back neutral • Start with warm-up sets</div></div></div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

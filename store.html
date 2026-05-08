@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Store — GoldTech</title>
+  <script>tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#f5b041' } }, fontFamily: { display:['Poppins','Inter','system-ui','sans-serif'] } } } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({title:'Store'});
+    Components.init();
+    document.getElementById('page-content').innerHTML = `
+      <div class="space-y-8">
+        <div class="glass rounded-3xl p-8">
+          <div class="flex items-center justify-between mb-2"><div class="text-gold text-xs font-bold uppercase tracking-wider">Shop Now</div><div class="text-stone-400 text-sm">Free pickup available</div></div>
+          <h1 class="text-3xl font-black mb-1">Premium Equipment & Supplements</h1>
+          <p class="text-stone-300">Curated selection for serious athletes and members</p>
+          <div class="mt-4 flex gap-2"><input type="text" placeholder="Search products..." class="flex-1 glass px-4 py-3 rounded-xl border border-white/10 text-white placeholder:text-stone-500 focus:outline-none focus:border-gold/50" /><button class="bg-gold text-black px-6 py-3 rounded-xl font-semibold">Search</button></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Whey Protein -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1629117883181-88664c6f88fa?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover" alt="Gold Whey Protein">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-2"><div class="text-gold text-xs font-bold uppercase">Protein</div><div class="flex items-center gap-1 text-sm"><span class="text-gold">★★★★★</span><span class="text-stone-400">(184)</span></div></div>
+              <h3 class="font-black text-lg mb-1">Gold Whey Isolate 2kg</h3>
+              <p class="text-stone-400 text-sm mb-3">Premium whey isolate • 25g protein per serving • Vanilla</p>
+              <div class="flex items-center justify-between"><span class="text-gold font-black text-lg">$49.99</span><button class="bg-gold text-black px-4 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Add Cart</button></div>
+            </div>
+          </article>
+
+          <!-- Creatine Monohydrate -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1599599810694-b5ac4dd8b4ba?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover" alt="Creatine">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-2"><div class="text-gold text-xs font-bold uppercase">Supplement</div><div class="flex items-center gap-1 text-sm"><span class="text-gold">★★★★☆</span><span class="text-stone-400">(267)</span></div></div>
+              <h3 class="font-black text-lg mb-1">Creatine Monohydrate 300g</h3>
+              <p class="text-stone-400 text-sm mb-3">100% pure creatine • Unflavored • Mixes smoothly</p>
+              <div class="flex items-center justify-between"><span class="text-gold font-black text-lg">$24.99</span><button class="bg-gold text-black px-4 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Add Cart</button></div>
+            </div>
+          </article>
+
+          <!-- BCAA Powder -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1615485547933-4b9e06fd88f4?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover" alt="BCAA Powder">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-2"><div class="text-gold text-xs font-bold uppercase">Amino Acids</div><div class="flex items-center gap-1 text-sm"><span class="text-gold">★★★★★</span><span class="text-stone-400">(312)</span></div></div>
+              <h3 class="font-black text-lg mb-1">Advanced BCAA 8:1:1</h3>
+              <p class="text-stone-400 text-sm mb-3">During-workout recovery • Blue Raspberry flavor • 250g</p>
+              <div class="flex items-center justify-between"><span class="text-gold font-black text-lg">$34.99</span><button class="bg-gold text-black px-4 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Add Cart</button></div>
+            </div>
+          </article>
+
+          <!-- Pre-Workout -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1590080876/supplement-energy-drink-flatlay?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover" alt="Pre-Workout">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-2"><div class="text-gold text-xs font-bold uppercase">Energy</div><div class="flex items-center gap-1 text-sm"><span class="text-gold">★★★★★</span><span class="text-stone-400">(428)</span></div></div>
+              <h3 class="font-black text-lg mb-1">Premium Pre-Workout Blast</h3>
+              <p class="text-stone-400 text-sm mb-3">Intense focus & pump • Citrus flavor • 400g (40 servings)</p>
+              <div class="flex items-center justify-between"><span class="text-gold font-black text-lg">$54.99</span><button class="bg-gold text-black px-4 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Add Cart</button></div>
+            </div>
+          </article>
+
+          <!-- Gym Apparel -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1584622181032-c13e1f64b5d8?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover" alt="Training Tee">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-2"><div class="text-gold text-xs font-bold uppercase">Apparel</div><div class="flex items-center gap-1 text-sm"><span class="text-gold">★★★★☆</span><span class="text-stone-400">(156)</span></div></div>
+              <h3 class="font-black text-lg mb-1">Premium Training Tee</h3>
+              <p class="text-stone-400 text-sm mb-3">Moisture-wicking • Fitted cut • Available in 3 colors</p>
+              <div class="flex items-center justify-between"><span class="text-gold font-black text-lg">$39.99</span><button class="bg-gold text-black px-4 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Add Cart</button></div>
+            </div>
+          </article>
+
+          <!-- Resistance Bands -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1602938657944-17b56b84d9d6?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover" alt="Resistance Bands">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-2"><div class="text-gold text-xs font-bold uppercase">Equipment</div><div class="flex items-center gap-1 text-sm"><span class="text-gold">★★★★★</span><span class="text-stone-400">(89)</span></div></div>
+              <h3 class="font-black text-lg mb-1">Power Resistance Band Set</h3>
+              <p class="text-stone-400 text-sm mb-3">5 levels • Natural latex • Includes carry bag</p>
+              <div class="flex items-center justify-between"><span class="text-gold font-black text-lg">$44.99</span><button class="bg-gold text-black px-4 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Add Cart</button></div>
+            </div>
+          </article>
+
+          <!-- Foam Roller -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1539571696357-5a69c3a01250?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover" alt="Foam Roller">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-2"><div class="text-gold text-xs font-bold uppercase">Recovery</div><div class="flex items-center gap-1 text-sm"><span class="text-gold">★★★★☆</span><span class="text-stone-400">(201)</span></div></div>
+              <h3 class="font-black text-lg mb-1">Elite Foam Roller Pro</h3>
+              <p class="text-stone-400 text-sm mb-3">13" length • High-density foam • Recovery guide included</p>
+              <div class="flex items-center justify-between"><span class="text-gold font-black text-lg">$59.99</span><button class="bg-gold text-black px-4 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Add Cart</button></div>
+            </div>
+          </article>
+
+          <!-- Gym Shorts -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover" alt="Gym Shorts">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-2"><div class="text-gold text-xs font-bold uppercase">Apparel</div><div class="flex items-center gap-1 text-sm"><span class="text-gold">★★★★★</span><span class="text-stone-400">(143)</span></div></div>
+              <h3 class="font-black text-lg mb-1">Performance Gym Shorts</h3>
+              <p class="text-stone-400 text-sm mb-3">7" inseam • Built-in compression • Water-resistant</p>
+              <div class="flex items-center justify-between"><span class="text-gold font-black text-lg">$44.99</span><button class="bg-gold text-black px-4 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Add Cart</button></div>
+            </div>
+          </article>
+
+          <!-- Shaker Bottle -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1600333326109-f17a62bf50ec?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover" alt="Shaker Bottle">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-2"><div class="text-gold text-xs font-bold uppercase">Accessories</div><div class="flex items-center gap-1 text-sm"><span class="text-gold">★★★★☆</span><span class="text-stone-400">(278)</span></div></div>
+              <h3 class="font-black text-lg mb-1">Stainless Steel Shaker Pro</h3>
+              <p class="text-stone-400 text-sm mb-3">28oz capacity • Leak-proof lid • Dual compartment</p>
+              <div class="flex items-center justify-between"><span class="text-gold font-black text-lg">$24.99</span><button class="bg-gold text-black px-4 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Add Cart</button></div>
+            </div>
+          </article>
+
+          <!-- Weight Lifting Gloves -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1576424663920-7c883ba22f5c?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover" alt="Lifting Gloves">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-2"><div class="text-gold text-xs font-bold uppercase">Gear</div><div class="flex items-center gap-1 text-sm"><span class="text-gold">★★★★★</span><span class="text-stone-400">(195)</span></div></div>
+              <h3 class="font-black text-lg mb-1">Premium Lifting Gloves</h3>
+              <p class="text-stone-400 text-sm mb-3">Padded palm • Wrist support • Touchscreen compatible</p>
+              <div class="flex items-center justify-between"><span class="text-gold font-black text-lg">$29.99</span><button class="bg-gold text-black px-4 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Add Cart</button></div>
+            </div>
+          </article>
+
+          <!-- Dumbbell Set -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1593642632759-e6d7eb0d34d5?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover" alt="Dumbbells">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-2"><div class="text-gold text-xs font-bold uppercase">Equipment</div><div class="flex items-center gap-1 text-sm"><span class="text-gold">★★★★☆</span><span class="text-stone-400">(112)</span></div></div>
+              <h3 class="font-black text-lg mb-1">Adjustable Dumbbell 5-25kg</h3>
+              <p class="text-stone-400 text-sm mb-3">11 weight settings • Space-saving • Rubber-coated</p>
+              <div class="flex items-center justify-between"><span class="text-gold font-black text-lg">$129.99</span><button class="bg-gold text-black px-4 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Add Cart</button></div>
+            </div>
+          </article>
+
+          <!-- Hydration Pack -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1609365376706-a31b34ddd70e?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover" alt="Gym Bag">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-2"><div class="text-gold text-xs font-bold uppercase">Bags</div><div class="flex items-center gap-1 text-sm"><span class="text-gold">★★★★★</span><span class="text-stone-400">(164)</span></div></div>
+              <h3 class="font-black text-lg mb-1">Performance Gym Backpack</h3>
+              <p class="text-stone-400 text-sm mb-3">Laptop compartment • Hydration pocket • Ventilated shoe bay</p>
+              <div class="flex items-center justify-between"><span class="text-gold font-black text-lg">$79.99</span><button class="bg-gold text-black px-4 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Add Cart</button></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="glass rounded-3xl p-8 text-center">
+          <h2 class="text-2xl font-black mb-2">Need something specific?</h2>
+          <p class="text-stone-300 mb-4">Can't find what you're looking for? Contact our store team.</p>
+          <button class="bg-gold text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 fast-trans">Contact Store</button>
+        </div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

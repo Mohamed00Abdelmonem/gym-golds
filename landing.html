@@ -1,0 +1,177 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#070708" />
+  <title>GoldTech — Premium Gym Landing</title>
+  <script>tailwind.config={theme:{extend:{colors:{gold:{DEFAULT:'#f5b041'}},fontFamily:{display:['Poppins','Inter','system-ui','sans-serif']}}}}</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .hero-grid{background-image:linear-gradient(180deg,rgba(7,7,8,.5),rgba(7,7,8,.84)),url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1800&auto=format&fit=crop');background-size:cover;background-position:center}
+    .pricing-active{background:rgba(245,176,65,.14);color:#fff;border-color:rgba(245,176,65,.35)}
+    .testimonials-track{scrollbar-width:none}
+    .testimonials-track::-webkit-scrollbar{display:none}
+  </style>
+</head>
+<body class="antialiased page-ready">
+  <div class="min-h-screen bg-[radial-gradient(circle_at_top,rgba(245,176,65,.12),transparent_24%),linear-gradient(180deg,#050506,#0d0d0f_50%,#050506)] text-white overflow-x-hidden">
+    <header class="sticky top-0 z-50 border-b border-white/6 bg-black/40 backdrop-blur-2xl">
+      <div class="mx-auto max-w-7xl px-5 md:px-8 h-20 flex items-center justify-between">
+        <a href="landing.html" class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#1b1b1d] to-[#0f0f11] border border-white/10 grid place-items-center shadow-[0_0_28px_rgba(245,176,65,.18)]"><span class="text-gold font-black text-lg">G</span></div>
+          <div><div class="text-white font-black text-lg leading-none">GoldTech</div><div class="text-stone-400 text-[11px] uppercase tracking-[0.28em] mt-1">Premium Smart Gym</div></div>
+        </a>
+        <nav class="hidden lg:flex items-center gap-6 text-sm text-stone-300"><a href="#features" class="hover:text-white fast-trans">Features</a><a href="#trainers" class="hover:text-white fast-trans">Trainers</a><a href="#pricing" class="hover:text-white fast-trans">Pricing</a><a href="#faq" class="hover:text-white fast-trans">FAQ</a></nav>
+        <div class="flex items-center gap-3"><a href="login.html" class="hidden sm:inline-flex glass px-4 py-2.5 rounded-2xl text-sm font-semibold">Sign In</a><a href="register.html" class="bg-gold text-black px-4 py-2.5 rounded-2xl text-sm font-semibold shadow-[0_12px_40px_rgba(245,176,65,.22)]">Start Training</a></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-grid relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-16 left-10 w-28 h-28 rounded-full bg-gold/20 blur-3xl float-ambient"></div>
+          <div class="absolute top-1/4 right-16 w-40 h-40 rounded-full bg-white/10 blur-3xl drift-ambient"></div>
+          <div class="absolute bottom-20 left-1/3 w-56 h-56 rounded-full bg-gold/10 blur-3xl float-ambient"></div>
+        </div>
+        <div class="mx-auto max-w-7xl px-5 md:px-8 py-16 md:py-24 relative grid lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-6 reveal in-view">
+            <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-stone-200"><span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>Transform your body into your strongest version</div>
+            <h1 class="mt-6 text-5xl md:text-7xl font-black leading-[0.92] tracking-tight max-w-3xl">Train like a premium performance brand.</h1>
+            <p class="mt-6 text-base md:text-lg text-stone-300 max-w-2xl leading-8">Live coaching, smart machines, body analytics, crowded-floor insights, and elegant progress tracking, all inside one cinematic gym platform.</p>
+            <div class="mt-8 flex flex-wrap gap-3"><a href="register.html" class="bg-gold text-black px-6 py-3.5 rounded-2xl font-semibold shadow-[0_0_30px_rgba(245,176,65,.22)] hover:scale-[1.02] fast-trans">Start Training</a><a href="programs.html" class="glass px-6 py-3.5 rounded-2xl font-semibold hover:bg-white/10 fast-trans">Explore Programs</a></div>
+            <div class="mt-8 flex items-center gap-5 text-sm text-stone-300"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-400"></span>Open 24/7</div><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gold"></span>Premium coaching</div><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-sky-400"></span>Live insights</div></div>
+          </div>
+
+          <div class="lg:col-span-6 relative reveal">
+            <div class="absolute -inset-8 bg-gradient-to-br from-gold/20 via-transparent to-white/5 blur-3xl"></div>
+            <div class="relative grid grid-cols-12 gap-4 items-end">
+              <div class="col-span-12 md:col-span-7 glass rounded-[2rem] p-4 md:p-5 shadow-[0_24px_80px_rgba(0,0,0,.35)]"><img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1400&auto=format&fit=crop" alt="Athlete training" class="w-full h-[420px] object-cover rounded-[1.5rem]"></div>
+              <div class="col-span-12 md:col-span-5 space-y-4"><div class="glass rounded-[1.75rem] p-5"><div class="text-stone-400 text-xs uppercase tracking-[0.24em]">Active members</div><div class="mt-2 text-4xl font-black counter" data-target="1245">0</div></div><div class="glass rounded-[1.75rem] p-5"><div class="text-stone-400 text-xs uppercase tracking-[0.24em]">Calories burned</div><div class="mt-2 text-4xl font-black counter" data-target="482000">0</div></div><div class="glass rounded-[1.75rem] p-5"><div class="text-stone-400 text-xs uppercase tracking-[0.24em]">Workout completions</div><div class="mt-2 text-4xl font-black counter" data-target="32150">0</div></div></div>
+            </div>
+            <div class="mt-4 flex items-center justify-between text-stone-300 text-xs uppercase tracking-[0.22em]"><span>Scroll to explore the experience</span><span class="inline-flex items-center gap-2"><span class="w-6 h-[1px] bg-white/30"></span><span>01</span></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-5 md:px-8 py-16 md:py-20 reveal" id="stats">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div class="glass rounded-[1.75rem] p-6"><div class="text-stone-400 text-xs uppercase tracking-[0.24em]">Branches</div><div class="mt-2 text-4xl font-black counter" data-target="18">0</div></div><div class="glass rounded-[1.75rem] p-6"><div class="text-stone-400 text-xs uppercase tracking-[0.24em]">Coaches</div><div class="mt-2 text-4xl font-black counter" data-target="76">0</div></div><div class="glass rounded-[1.75rem] p-6"><div class="text-stone-400 text-xs uppercase tracking-[0.24em]">Workouts</div><div class="mt-2 text-4xl font-black counter" data-target="1200">0</div></div><div class="glass rounded-[1.75rem] p-6"><div class="text-stone-400 text-xs uppercase tracking-[0.24em]">Rating</div><div class="mt-2 text-4xl font-black">4.9</div></div><div class="glass rounded-[1.75rem] p-6"><div class="text-stone-400 text-xs uppercase tracking-[0.24em]">Open</div><div class="mt-2 text-4xl font-black">24/7</div></div>
+        </div>
+      </section>
+
+      <section id="features" class="mx-auto max-w-7xl px-5 md:px-8 py-12 md:py-20 reveal">
+        <div class="max-w-2xl"><div class="text-stone-400 text-xs uppercase tracking-[0.28em]">Platform features</div><h2 class="mt-3 text-3xl md:text-5xl font-black leading-tight">Built like a premium fitness operating system.</h2></div>
+        <div class="mt-10 grid lg:grid-cols-12 gap-4">
+          <div class="lg:col-span-5 glass rounded-[2rem] p-6 md:p-8 hover-lift fast-trans"><div class="text-gold text-xs uppercase tracking-[0.24em]">Workout tracking</div><h3 class="mt-3 text-2xl font-black">Log every rep with elegance.</h3><p class="mt-3 text-stone-300">Track sets, weight, recovery, and performance in a way that feels premium instead of technical.</p></div>
+          <div class="lg:col-span-3 glass rounded-[2rem] p-6 md:p-8 hover-lift fast-trans"><div class="text-gold text-xs uppercase tracking-[0.24em]">Smart predictions</div><h3 class="mt-3 text-2xl font-black">Know what comes next.</h3><p class="mt-3 text-stone-300">Adaptive recommendations based on attendance, scans, and workout history.</p></div>
+          <div class="lg:col-span-4 glass rounded-[2rem] p-6 md:p-8 hover-lift fast-trans"><div class="text-gold text-xs uppercase tracking-[0.24em]">QR tutorials</div><h3 class="mt-3 text-2xl font-black">Instant machine guidance.</h3><p class="mt-3 text-stone-300">Scan equipment and get safe, clean, on-device instruction instantly.</p></div>
+          <div class="lg:col-span-4 glass rounded-[2rem] p-6 md:p-8 hover-lift fast-trans"><div class="text-gold text-xs uppercase tracking-[0.24em]">InBody analytics</div><h3 class="mt-3 text-2xl font-black">Body composition at a glance.</h3><p class="mt-3 text-stone-300">View body fat, muscle mass, and progress trends with cinematic charts.</p></div>
+          <div class="lg:col-span-4 glass rounded-[2rem] p-6 md:p-8 hover-lift fast-trans"><div class="text-gold text-xs uppercase tracking-[0.24em]">Crowd system</div><h3 class="mt-3 text-2xl font-black">See the floor before you arrive.</h3><p class="mt-3 text-stone-300">Know the busiest hours, live occupancy, and equipment availability.</p></div>
+          <div class="lg:col-span-4 glass rounded-[2rem] p-6 md:p-8 hover-lift fast-trans"><div class="text-gold text-xs uppercase tracking-[0.24em]">Private coaching</div><h3 class="mt-3 text-2xl font-black">Match with elite trainers.</h3><p class="mt-3 text-stone-300">Premium coach cards, ratings, specialties, and direct booking flow.</p></div>
+          <div class="lg:col-span-12 glass rounded-[2rem] p-6 md:p-8 hover-lift fast-trans"><div class="text-gold text-xs uppercase tracking-[0.24em]">Achievements</div><h3 class="mt-3 text-2xl font-black">Turn consistency into motivation.</h3><p class="mt-3 text-stone-300 max-w-3xl">Badges, streaks, milestones, and transformation goals create a product that feels emotionally motivating, not just transactional.</p></div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-5 md:px-8 py-12 md:py-20 reveal">
+        <div class="grid lg:grid-cols-12 gap-5 items-center">
+          <div class="lg:col-span-5 glass rounded-[2rem] p-6 md:p-8"><div class="text-stone-400 text-xs uppercase tracking-[0.24em]">Interactive app preview</div><h2 class="mt-3 text-3xl font-black">Layered screens that feel alive.</h2><p class="mt-3 text-stone-300">A compact preview of the dashboard, mobile training view, and analytics surfaces working together as one system.</p></div>
+          <div class="lg:col-span-7 grid md:grid-cols-2 gap-4"><div class="glass rounded-[2rem] p-4 md:p-5 float-ambient"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop" class="w-full h-72 object-cover rounded-[1.5rem]" alt="Dashboard preview"></div><div class="glass rounded-[2rem] p-4 md:p-5 drift-ambient md:mt-10"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1200&auto=format&fit=crop" class="w-full h-72 object-cover rounded-[1.5rem]" alt="Mobile workout preview"></div></div>
+        </div>
+      </section>
+
+      <section id="trainers" class="mx-auto max-w-7xl px-5 md:px-8 py-12 md:py-20 reveal">
+        <div class="flex items-end justify-between gap-4 flex-wrap"><div><div class="text-stone-400 text-xs uppercase tracking-[0.28em]">Trainers</div><h2 class="mt-3 text-3xl md:text-5xl font-black">Luxury coach cards with real presence.</h2></div><a href="coaches.html" class="text-gold font-semibold">Browse all coaches</a></div>
+        <div class="mt-10 grid md:grid-cols-3 gap-4">
+          <article class="glass rounded-[2rem] p-5 hover-lift fast-trans"><img class="w-full h-72 object-cover rounded-[1.5rem]" src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?q=80&w=1200&auto=format&fit=crop" alt="Coach Ava"><div class="mt-4 flex items-center justify-between"><h3 class="font-black text-xl">Ava Brooks</h3><span class="text-gold">4.9 ★</span></div><p class="text-stone-300 text-sm mt-2">Strength, physique, and confidence coaching.</p></article>
+          <article class="glass rounded-[2rem] p-5 hover-lift fast-trans"><img class="w-full h-72 object-cover rounded-[1.5rem]" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop" alt="Coach Malik"><div class="mt-4 flex items-center justify-between"><h3 class="font-black text-xl">Malik Grant</h3><span class="text-gold">4.8 ★</span></div><p class="text-stone-300 text-sm mt-2">Athletic performance and conditioning specialist.</p></article>
+          <article class="glass rounded-[2rem] p-5 hover-lift fast-trans"><img class="w-full h-72 object-cover rounded-[1.5rem]" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" alt="Coach Lina"><div class="mt-4 flex items-center justify-between"><h3 class="font-black text-xl">Lina Chen</h3><span class="text-gold">5.0 ★</span></div><p class="text-stone-300 text-sm mt-2">Mobility, recovery, and transformation programs.</p></article>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-5 md:px-8 py-12 md:py-20 reveal">
+        <div class="grid lg:grid-cols-12 gap-5 items-stretch">
+          <div class="lg:col-span-5 glass rounded-[2rem] p-6 md:p-8"><div class="text-stone-400 text-xs uppercase tracking-[0.24em]">Transformation showcase</div><h2 class="mt-3 text-3xl font-black">Before and after that feels earned.</h2><div class="mt-6 space-y-4"><div class="rounded-[1.5rem] border border-white/8 bg-white/3 p-4"><div class="flex justify-between text-sm"><span>Alex R</span><span class="text-gold">-12kg</span></div><div class="mt-3 h-2 rounded-full bg-white/5 overflow-hidden"><div class="w-[78%] h-full bg-gradient-to-r from-gold to-amber-300"></div></div></div><div class="rounded-[1.5rem] border border-white/8 bg-white/3 p-4"><div class="flex justify-between text-sm"><span>Maya S</span><span class="text-gold">+8% muscle</span></div><div class="mt-3 h-2 rounded-full bg-white/5 overflow-hidden"><div class="w-[56%] h-full bg-gradient-to-r from-emerald-400 to-sky-400"></div></div></div></div></div>
+          <div class="lg:col-span-7 glass rounded-[2rem] p-6 md:p-8"><div class="text-stone-400 text-xs uppercase tracking-[0.24em]">Live gym crowd preview</div><h2 class="mt-3 text-3xl font-black">Know when to train before you leave home.</h2><div class="mt-6 grid grid-cols-12 gap-2 items-end h-56"><div class="col-span-1 h-[25%] rounded-t-xl bg-white/15"></div><div class="col-span-1 h-[38%] rounded-t-xl bg-white/20"></div><div class="col-span-1 h-[52%] rounded-t-xl bg-white/20"></div><div class="col-span-1 h-[66%] rounded-t-xl bg-white/25"></div><div class="col-span-1 h-[84%] rounded-t-xl bg-gold/60 shadow-[0_0_24px_rgba(245,176,65,.28)]"></div><div class="col-span-1 h-full rounded-t-xl bg-gold shadow-[0_0_30px_rgba(245,176,65,.42)]"></div><div class="col-span-1 h-[92%] rounded-t-xl bg-gold/70"></div><div class="col-span-1 h-[74%] rounded-t-xl bg-white/20"></div><div class="col-span-1 h-[54%] rounded-t-xl bg-white/15"></div><div class="col-span-1 h-[42%] rounded-t-xl bg-white/15"></div><div class="col-span-1 h-[30%] rounded-t-xl bg-white/15"></div><div class="col-span-1 h-[22%] rounded-t-xl bg-white/10"></div></div><div class="mt-4 text-sm text-stone-300">Busy hours peak around 6:00 PM to 7:30 PM. Machines and classes are calmer before noon.</div></div>
+        </div>
+      </section>
+
+      <section id="pricing" class="mx-auto max-w-7xl px-5 md:px-8 py-12 md:py-20 reveal">
+        <div class="flex items-end justify-between gap-4 flex-wrap"><div><div class="text-stone-400 text-xs uppercase tracking-[0.28em]">Membership pricing</div><h2 class="mt-3 text-3xl md:text-5xl font-black">Simple plans with a premium feel.</h2></div><div class="glass rounded-full p-1 flex items-center gap-1 text-sm"><button class="pricing-active px-4 py-2 rounded-full" data-price-mode="monthly">Monthly</button><button class="px-4 py-2 rounded-full text-stone-300" data-price-mode="yearly">Yearly</button></div></div>
+        <div class="mt-10 grid lg:grid-cols-3 gap-4">
+          <div class="glass rounded-[2rem] p-6"><div class="text-stone-400 text-xs uppercase tracking-[0.24em]">Starter</div><div class="mt-3 text-5xl font-black"><span data-price="starter">$29</span></div><div class="text-stone-400 text-sm">Access to all clubs</div></div>
+          <div class="glass rounded-[2rem] p-6 border border-gold/30 bg-gold/10 shadow-[0_0_36px_rgba(245,176,65,.12)]"><div class="text-gold text-xs uppercase tracking-[0.24em]">Most Popular</div><div class="mt-3 text-5xl font-black"><span data-price="elite">$79</span></div><div class="text-stone-300 text-sm">Private coaching + scans + booking priority</div></div>
+          <div class="glass rounded-[2rem] p-6"><div class="text-stone-400 text-xs uppercase tracking-[0.24em]">Annual</div><div class="mt-3 text-5xl font-black"><span data-price="annual">$299</span></div><div class="text-stone-400 text-sm">Best value for committed members</div></div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-5 md:px-8 py-12 md:py-20 reveal">
+        <div class="text-stone-400 text-xs uppercase tracking-[0.28em]">Testimonials</div><h2 class="mt-3 text-3xl md:text-5xl font-black">Loved by members who want more than a basic gym.</h2>
+        <div class="mt-8 flex gap-4 overflow-x-auto testimonials-track snap-x snap-mandatory pb-2">
+          <article class="min-w-[320px] glass rounded-[2rem] p-6 snap-start"><div class="flex items-center gap-3"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=120&auto=format&fit=crop" class="w-14 h-14 rounded-full object-cover" alt="member"><div><div class="font-bold">Sophia</div><div class="text-gold text-sm">★★★★★</div></div></div><p class="mt-4 text-stone-300">It feels like a luxury app, not just a gym membership. Everything is beautiful and easy to use.</p></article>
+          <article class="min-w-[320px] glass rounded-[2rem] p-6 snap-start"><div class="flex items-center gap-3"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=120&auto=format&fit=crop" class="w-14 h-14 rounded-full object-cover" alt="member"><div><div class="font-bold">Jordan</div><div class="text-gold text-sm">★★★★★</div></div></div><p class="mt-4 text-stone-300">The crowd preview and machine tutorials make it feel genuinely smarter than other gym sites.</p></article>
+          <article class="min-w-[320px] glass rounded-[2rem] p-6 snap-start"><div class="flex items-center gap-3"><img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=120&auto=format&fit=crop" class="w-14 h-14 rounded-full object-cover" alt="member"><div><div class="font-bold">Elena</div><div class="text-gold text-sm">★★★★★</div></div></div><p class="mt-4 text-stone-300">The whole brand feels expensive in the best way. It made me want to sign up immediately.</p></article>
+        </div>
+      </section>
+
+      <section id="faq" class="mx-auto max-w-7xl px-5 md:px-8 py-12 md:py-20 reveal">
+        <div class="grid lg:grid-cols-12 gap-5 items-start">
+          <div class="lg:col-span-4"><div class="text-stone-400 text-xs uppercase tracking-[0.28em]">FAQ</div><h2 class="mt-3 text-3xl md:text-5xl font-black">Answers without the clutter.</h2></div>
+          <div class="lg:col-span-8 space-y-3">
+            <details class="glass rounded-[1.5rem] p-5"><summary class="cursor-pointer list-none flex items-center justify-between font-semibold text-lg">Can I use this on mobile?<span class="text-gold">+</span></summary><p class="mt-3 text-stone-300">Yes. The UI is designed for desktop and mobile with touch-friendly spacing and a responsive layout.</p></details>
+            <details class="glass rounded-[1.5rem] p-5"><summary class="cursor-pointer list-none flex items-center justify-between font-semibold text-lg">Does the platform support coaching?<span class="text-gold">+</span></summary><p class="mt-3 text-stone-300">Yes. Coaches, plans, ratings, and private sessions are part of the connected platform experience.</p></details>
+            <details class="glass rounded-[1.5rem] p-5"><summary class="cursor-pointer list-none flex items-center justify-between font-semibold text-lg">Is this a public landing page or app?<span class="text-gold">+</span></summary><p class="mt-3 text-stone-300">This page is the public landing page. The dashboard and tools live behind the app shell.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-5 md:px-8 py-12 md:py-20 reveal">
+        <div class="glass rounded-[2.5rem] p-8 md:p-12 text-center relative overflow-hidden"><div class="absolute inset-0 bg-gradient-to-r from-gold/10 via-transparent to-white/5 pointer-events-none"></div><div class="relative max-w-3xl mx-auto"><div class="text-stone-400 text-xs uppercase tracking-[0.28em]">Final CTA</div><h2 class="mt-4 text-4xl md:text-6xl font-black leading-tight">Ready to train in a smarter, more premium gym experience?</h2><p class="mt-5 text-stone-300 text-base md:text-lg">Join GoldTech and turn your gym into a place people actually want to show up to.</p><div class="mt-8 flex flex-wrap justify-center gap-3"><a href="register.html" class="bg-gold text-black px-6 py-3.5 rounded-2xl font-semibold">Start Training</a><a href="dashboard.html" class="glass px-6 py-3.5 rounded-2xl font-semibold">Open Dashboard</a></div></div></div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/6 bg-black/40"><div class="mx-auto max-w-7xl px-5 md:px-8 py-12 md:py-16 grid md:grid-cols-4 gap-8 text-sm"><div><div class="text-white font-black text-xl">GoldTech</div><p class="mt-3 text-stone-400 leading-7">A premium smart gym platform for modern fitness clubs, coaches, and members.</p></div><div><div class="text-stone-300 font-semibold uppercase tracking-[0.22em] text-xs">Navigate</div><div class="mt-4 space-y-2 text-stone-400"><a href="#features" class="block hover:text-white">Features</a><a href="#trainers" class="block hover:text-white">Trainers</a><a href="#pricing" class="block hover:text-white">Pricing</a><a href="#faq" class="block hover:text-white">FAQ</a></div></div><div><div class="text-stone-300 font-semibold uppercase tracking-[0.22em] text-xs">Locations</div><div class="mt-4 space-y-2 text-stone-400"><div>Downtown Club</div><div>Riverside Studio</div><div>Uptown Performance Lab</div></div></div><div><div class="text-stone-300 font-semibold uppercase tracking-[0.22em] text-xs">Download</div><div class="mt-4 flex flex-wrap gap-3"><a href="register.html" class="glass px-4 py-2.5 rounded-2xl">App Store</a><a href="register.html" class="glass px-4 py-2.5 rounded-2xl">Google Play</a></div></div></div></footer>
+  </div>
+
+  <script>
+    const priceButtons = document.querySelectorAll('[data-price-mode]');
+    const priceMap = { monthly: { starter: '$29', elite: '$79', annual: '$299' }, yearly: { starter: '$299', elite: '$799', annual: '$2,990' } };
+    priceButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        priceButtons.forEach((item) => item.classList.remove('pricing-active'));
+        button.classList.add('pricing-active');
+        const mode = button.getAttribute('data-price-mode');
+        document.querySelectorAll('[data-price]').forEach((node) => { node.textContent = priceMap[mode][node.getAttribute('data-price')]; });
+      });
+    });
+
+    const animateCounter = (node) => {
+      const target = Number(node.getAttribute('data-target') || '0');
+      const start = performance.now();
+      const duration = 1200;
+      const formatter = new Intl.NumberFormat('en-US');
+      const tick = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        node.textContent = formatter.format(progress < 1 ? Math.floor(target * (0.2 + progress * 0.8)) : target);
+        if(progress < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if(entry.isIntersecting && !entry.target.dataset.started){ entry.target.dataset.started = '1'; animateCounter(entry.target); }
+      });
+    }, { threshold: 0.45 });
+    document.querySelectorAll('.counter').forEach((node) => counterObserver.observe(node));
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if(entry.isIntersecting) entry.target.classList.add('in-view'); });
+    }, { threshold: 0.16 });
+    document.querySelectorAll('.reveal').forEach((node) => revealObserver.observe(node));
+    document.body.classList.add('page-ready');
+  </script>
+</body>
+</html>

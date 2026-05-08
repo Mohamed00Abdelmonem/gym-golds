@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Notifications — GoldTech</title>
+  <script>tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#f5b041' } }, fontFamily: { display:['Poppins','Inter','system-ui','sans-serif'] } } } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({title:'Notifications'});
+    Components.init();
+    document.getElementById('page-content').innerHTML = `
+      <div class="glass rounded-2xl p-6">
+        <div class="text-stone-400 text-xs">Notifications Center</div>
+        <div class="mt-4 space-y-3"><div class="glass p-3 rounded-lg"><div class="text-white font-semibold">Workout reminder</div><div class="text-stone-400 text-sm">Chest & Triceps • Today 18:30</div></div><div class="glass p-3 rounded-lg"><div class="text-white font-semibold">New message from Lara</div><div class="text-stone-400 text-sm">Coach replied to your booking</div></div></div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

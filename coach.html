@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Coach — GoldTech</title>
+  <script>tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#f5b041' } }, fontFamily: { display:['Poppins','Inter','system-ui','sans-serif'] } } } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({title:'Coach Profile'});
+    Components.init();
+    document.getElementById('page-content').innerHTML = `
+      <div class="space-y-8">
+        <!-- Hero Section -->
+        <div class="glass rounded-3xl overflow-hidden">
+          <div class="relative h-96 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Coach Hero">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+          </div>
+          <div class="p-8 md:p-12 grid md:grid-cols-3 gap-8 items-start">
+            <div class="md:col-span-2">
+              <h1 class="text-4xl font-black mb-2">Ava Brooks</h1>
+              <p class="text-gold text-lg font-bold mb-4">Strength & Physique Coach</p>
+              <p class="text-stone-300 leading-7 mb-6">Ava is a world-class strength coach with 10+ years of experience transforming bodies through intelligent programming and personalized nutrition guidance. She specializes in physique development, powerlifting prep, and helping busy professionals build lean muscle.</p>
+              <div class="flex flex-wrap gap-3 mb-6"><span class="bg-gold/15 text-gold px-3 py-1 rounded-lg text-sm">NASM Certified</span><span class="bg-gold/15 text-gold px-3 py-1 rounded-lg text-sm">Nutrition Coach</span><span class="bg-gold/15 text-gold px-3 py-1 rounded-lg text-sm">500+ Transformations</span></div>
+              <div class="flex gap-3"><button class="bg-gold text-black px-8 py-3 rounded-xl font-bold text-lg hover:scale-105 fast-trans">Book Session</button><button class="glass px-8 py-3 rounded-xl font-bold text-lg hover:bg-white/10 fast-trans">Message</button></div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <div class="text-4xl font-black text-gold mb-1">4.9 ★</div>
+              <p class="text-stone-400 mb-4">Based on 342 reviews</p>
+              <div class="space-y-2 text-sm text-stone-300"><div>Response time: <span class="text-gold">30 min</span></div><div>Availability: <span class="text-emerald-400">Open</span></div><div>Session rate: <span class="text-gold">\$85/hr</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="grid md:grid-cols-4 gap-4">
+          <div class="glass rounded-2xl p-6 text-center"><div class="text-3xl font-black text-gold">500+</div><p class="text-stone-400 mt-2">Clients Transformed</p></div>
+          <div class="glass rounded-2xl p-6 text-center"><div class="text-3xl font-black text-gold">10</div><p class="text-stone-400 mt-2">Years Experience</p></div>
+          <div class="glass rounded-2xl p-6 text-center"><div class="text-3xl font-black text-gold">250+</div><p class="text-stone-400 mt-2">Active Sessions</p></div>
+          <div class="glass rounded-2xl p-6 text-center"><div class="text-3xl font-black text-gold">32</div><p class="text-stone-400 mt-2">Weekly Hours</p></div>
+        </div>
+
+        <!-- Expertise & Specializations -->
+        <div class="glass rounded-3xl p-8">
+          <h2 class="text-2xl font-black mb-6">Specializations</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div><h3 class="font-bold text-lg text-gold mb-3">Strength Training</h3><p class="text-stone-300">Personalized powerlifting and strength conditioning programs designed for measurable progress and injury prevention.</p></div>
+            <div><h3 class="font-bold text-lg text-gold mb-3">Physique Development</h3><p class="text-stone-300">Evidence-based bodybuilding techniques, hypertrophy programming, and competitive prep coaching.</p></div>
+            <div><h3 class="font-bold text-lg text-gold mb-3">Nutrition Coaching</h3><p class="text-stone-300">Customized meal plans, macro coaching, and sustainable dietary habits for long-term results.</p></div>
+            <div><h3 class="font-bold text-lg text-gold mb-3">One-on-One Training</h3><p class="text-stone-300">In-gym sessions with personalized attention, form corrections, and real-time programming adjustments.</p></div>
+          </div>
+        </div>
+
+        <!-- Certifications & Credentials -->
+        <div class="glass rounded-3xl p-8">
+          <h2 class="text-2xl font-black mb-6">Certifications & Education</h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="border-l-4 border-gold pl-4"><div class="font-bold text-lg">NASM Personal Training</div><div class="text-stone-400 text-sm">National Academy of Sports Medicine</div></div>
+            <div class="border-l-4 border-gold pl-4"><div class="font-bold text-lg">ISSN Nutrition Specialist</div><div class="text-stone-400 text-sm">International Society of Sports Nutrition</div></div>
+            <div class="border-l-4 border-gold pl-4"><div class="font-bold text-lg">IYCA Youth Specialist</div><div class="text-stone-400 text-sm">International Youth Conditioning Association</div></div>
+            <div class="border-l-4 border-gold pl-4"><div class="font-bold text-lg">Bachelor's Degree</div><div class="text-stone-400 text-sm">Exercise Science, State University</div></div>
+          </div>
+        </div>
+
+        <!-- Client Transformations -->
+        <div class="glass rounded-3xl p-8">
+          <h2 class="text-2xl font-black mb-6">Client Transformations</h2>
+          <div class="grid md:grid-cols-3 gap-5">
+            <div class="rounded-2xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=400&auto=format&fit=crop" class="w-full h-64 object-cover mb-3" alt="Transformation">
+              <div><h3 class="font-bold text-lg">Marcus</h3><p class="text-stone-400 text-sm">-15kg, +8kg muscle</p><p class="text-gold text-xs mt-1">3 months with Ava</p></div>
+            </div>
+            <div class="rounded-2xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=400&auto=format&fit=crop" class="w-full h-64 object-cover mb-3" alt="Transformation">
+              <div><h3 class="font-bold text-lg">Sarah</h3><p class="text-stone-400 text-sm">Body fat: 28% → 22%</p><p class="text-gold text-xs mt-1">6 months with Ava</p></div>
+            </div>
+            <div class="rounded-2xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=400&auto=format&fit=crop" class="w-full h-64 object-cover mb-3" alt="Transformation">
+              <div><h3 class="font-bold text-lg">James</h3><p class="text-stone-400 text-sm">Deadlift: 200kg → 280kg</p><p class="text-gold text-xs mt-1">4 months with Ava</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="glass rounded-3xl p-8">
+          <h2 class="text-2xl font-black mb-6">Client Reviews</h2>
+          <div class="space-y-4">
+            <div class="glass rounded-2xl p-6">
+              <div class="flex items-center gap-3 mb-3"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=80&auto=format&fit=crop" class="w-12 h-12 rounded-full object-cover" alt="Client"><div><div class="font-bold">David H.</div><div class="text-gold text-sm">★★★★★</div></div></div>
+              <p class="text-stone-300">"Ava completely transformed my approach to training. Her attention to detail and personalized programming have yielded the best results I've ever had. Highly recommended!"</p>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <div class="flex items-center gap-3 mb-3"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=80&auto=format&fit=crop" class="w-12 h-12 rounded-full object-cover" alt="Client"><div><div class="font-bold">Nicole K.</div><div class="text-gold text-sm">★★★★★</div></div></div>
+              <p class="text-stone-300">"I've worked with several coaches before, but Ava stands out. Her nutrition guidance combined with smart programming made this the easiest transformation I've done."</p>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <div class="flex items-center gap-3 mb-3"><img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=80&auto=format&fit=crop" class="w-12 h-12 rounded-full object-cover" alt="Client"><div><div class="font-bold">Alex M.</div><div class="text-gold text-sm">★★★★★</div></div></div>
+              <p class="text-stone-300">"Professional, knowledgeable, and genuinely cares about her clients. Ava is worth every penny. She helped me prepare for my first bodybuilding competition."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Booking Section -->
+        <div class="glass rounded-3xl p-8 text-center">
+          <h2 class="text-2xl font-black mb-2">Ready to Transform?</h2>
+          <p class="text-stone-300 mb-6 max-w-2xl mx-auto">Schedule your first session with Ava to begin your fitness journey. First-time clients get a free consultation.</p>
+          <div class="flex gap-3 justify-center"><button class="bg-gold text-black px-8 py-3 rounded-xl font-bold hover:scale-105 fast-trans">Book Session</button><a href="coaches.html" class="glass px-8 py-3 rounded-xl font-bold hover:bg-white/10 fast-trans">Back to Coaches</a></div>
+        </div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

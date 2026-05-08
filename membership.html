@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Membership Plans — GoldTech</title>
+  <script>tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#f5b041' } }, fontFamily: { display:['Poppins','Inter','system-ui','sans-serif'] } } } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({title:'Membership'});
+    Components.init();
+    document.getElementById('page-content').innerHTML = `
+      <div class="glass rounded-2xl p-6">
+        <div class="text-stone-400 text-xs">Membership Plans</div>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4"><div class="glass p-4 rounded-xl"><div class="text-white font-semibold">Starter</div><div class="text-stone-400 text-sm mt-1">$19/mo • Basic access</div></div><div class="glass p-4 rounded-xl"><div class="text-white font-semibold">Gold</div><div class="text-stone-400 text-sm mt-1">$49/mo • InBody + priority booking</div></div><div class="glass p-4 rounded-xl"><div class="text-white font-semibold">Private</div><div class="text-stone-400 text-sm mt-1">$129/mo • Private coach</div></div></div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

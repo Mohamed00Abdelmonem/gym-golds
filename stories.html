@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Stories — GoldTech</title>
+  <script>tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#f5b041' } }, fontFamily: { display:['Poppins','Inter','system-ui','sans-serif'] } } } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({title:'Community Stories'});
+    Components.init();
+    document.getElementById('page-content').innerHTML = `
+      <div class="glass rounded-2xl p-4">
+        <div class="text-stone-400 text-xs">Stories</div>
+        <div class="mt-3 overflow-x-auto flex gap-3 py-2">
+          <div class="glass p-3 rounded-xl text-center"><img src="https://images.unsplash.com/photo-1554284126-aa88f22d8a04?q=80&w=120&auto=format&fit=crop&s=placeholder" class="w-14 h-14 rounded-full mx-auto"/><div class="text-white mt-2">Coach Mia</div></div>
+          <div class="glass p-3 rounded-xl text-center"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=120&auto=format&fit=crop&s=placeholder" class="w-14 h-14 rounded-full mx-auto"/><div class="text-white mt-2">Riley</div></div>
+        </div>
+        <div class="mt-4 grid gap-3"><div class="glass p-4 rounded-lg"><div class="text-white font-semibold">Riley hit a 1RM PR</div><div class="text-stone-400 text-sm">Celebrating a 5 kg bench PR this week</div></div></div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

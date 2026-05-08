@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Exercise — GoldTech</title>
+  <script>tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#f5b041' } }, fontFamily: { display:['Poppins','Inter','system-ui','sans-serif'] } } } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({title:'Exercise Details'});
+    Components.init();
+    document.getElementById('page-content').innerHTML = `
+      <div class="glass rounded-2xl p-6">
+        <div class="flex items-start gap-6">
+          <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001d4?q=80&w=320&auto=format&fit=crop&s=placeholder" class="w-48 h-36 rounded-xl object-cover border border-white/6" alt="Exercise video" />
+          <div class="flex-1">
+            <div class="text-stone-400 text-xs">Exercise</div>
+            <div class="text-white font-extrabold text-2xl">Barbell Bench Press</div>
+            <div class="mt-2 text-stone-400">Target: Chest, Secondary: Shoulders, Triceps</div>
+            <div class="mt-4 grid grid-cols-2 gap-3"><div class="glass p-3 rounded-lg"><div class="text-stone-400 text-xs">1RM</div><div class="text-white font-bold">118 kg</div></div><div class="glass p-3 rounded-lg"><div class="text-stone-400 text-xs">Recommended</div><div class="text-white font-bold">70-85% 1RM</div></div></div>
+          </div>
+        </div>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="glass p-4 rounded-lg"><div class="text-stone-400 text-xs">Instructions</div><ol class="list-decimal ml-5 mt-2 text-stone-400"><li>Set up on bench with feet planted.</li><li>Grip the bar slightly wider than shoulder width.</li><li>Lower under control and press up with drive.</li></ol></div>
+          <div class="glass p-4 rounded-lg"><div class="text-stone-400 text-xs">Common Mistakes</div><ul class="mt-2 text-stone-400"><li>Flared elbows</li><li>Relying on bounce</li></ul></div>
+        </div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

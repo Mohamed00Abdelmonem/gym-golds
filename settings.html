@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Settings — GoldTech</title>
+  <script>tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#f5b041' } }, fontFamily: { display:['Poppins','Inter','system-ui','sans-serif'] } } } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({title:'Settings'});
+    Components.init();
+    document.getElementById('page-content').innerHTML = `
+      <div class="glass rounded-2xl p-6">
+        <div class="text-stone-400 text-xs">Settings</div>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4"><div class="glass p-4 rounded-lg"><div class="text-stone-400 text-xs">Profile</div><div class="mt-2 text-stone-400">Manage your basic info and connected accounts.</div></div><div class="glass p-4 rounded-lg"><div class="text-stone-400 text-xs">Appearance</div><div class="mt-2 text-stone-400">Enable dark mode, motion preferences.</div></div></div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

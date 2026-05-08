@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Coaches — GoldTech</title>
+  <script>tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#f5b041' } }, fontFamily: { display:['Poppins','Inter','system-ui','sans-serif'] } } } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({title:'Coaches Marketplace'});
+    Components.init();
+    document.getElementById('page-content').innerHTML = `
+      <div class="space-y-8">
+        <div class="glass rounded-3xl p-8">
+          <div class="flex items-center justify-between mb-2"><div class="text-gold text-xs font-bold uppercase tracking-wider">Elite Trainers</div><div class="text-stone-400 text-sm">12 verified coaches</div></div>
+          <h1 class="text-3xl font-black mb-1">Find Your Perfect Coach</h1>
+          <p class="text-stone-300">Book private sessions with certified professionals specializing in your fitness goals</p>
+          <div class="mt-4 flex gap-2 flex-wrap"><button class="glass px-4 py-2 rounded-xl text-sm border border-gold/30 text-gold">All</button><button class="glass px-4 py-2 rounded-xl text-sm border border-white/10 text-stone-300">Strength</button><button class="glass px-4 py-2 rounded-xl text-sm border border-white/10 text-stone-300">HIIT</button><button class="glass px-4 py-2 rounded-xl text-sm border border-white/10 text-stone-300">Mobility</button><button class="glass px-4 py-2 rounded-xl text-sm border border-white/10 text-stone-300">Nutrition</button></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Coach 1 -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer group">
+            <img src="https://images.unsplash.com/photo-1539571696357-5a69c3a01250?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover group-hover:scale-110 fast-trans" alt="Coach Ava">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-3"><div><h3 class="font-black text-lg">Ava Brooks</h3><p class="text-stone-400 text-sm">Strength & Physique</p></div><span class="text-gold font-black">4.9 ★</span></div>
+              <p class="text-stone-400 text-sm mb-4">10+ years • 500+ transformations • NASM certified</p>
+              <div class="flex gap-2"><button class="flex-1 bg-gold text-black px-3 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Book Session</button><a href="coach.html" class="flex-1 glass px-3 py-2 rounded-lg font-semibold text-sm text-center">View Profile</a></div>
+            </div>
+          </article>
+
+          <!-- Coach 2 -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer group">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover group-hover:scale-110 fast-trans" alt="Coach Malik">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-3"><div><h3 class="font-black text-lg">Malik Grant</h3><p class="text-stone-400 text-sm">Athletic Performance</p></div><span class="text-gold font-black">4.8 ★</span></div>
+              <p class="text-stone-400 text-sm mb-4">8+ years • Olympic athlete • Speed & agility</p>
+              <div class="flex gap-2"><button class="flex-1 bg-gold text-black px-3 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Book Session</button><a href="coach.html" class="flex-1 glass px-3 py-2 rounded-lg font-semibold text-sm text-center">View Profile</a></div>
+            </div>
+          </article>
+
+          <!-- Coach 3 -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer group">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover group-hover:scale-110 fast-trans" alt="Coach Lina">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-3"><div><h3 class="font-black text-lg">Lina Chen</h3><p class="text-stone-400 text-sm">Mobility & Recovery</p></div><span class="text-gold font-black">5.0 ★</span></div>
+              <p class="text-stone-400 text-sm mb-4">12+ years • Injury prevention • Flexibility</p>
+              <div class="flex gap-2"><button class="flex-1 bg-gold text-black px-3 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Book Session</button><a href="coach.html" class="flex-1 glass px-3 py-2 rounded-lg font-semibold text-sm text-center">View Profile</a></div>
+            </div>
+          </article>
+
+          <!-- Coach 4 -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer group">
+            <img src="https://images.unsplash.com/photo-1552258987-868cb78106f7?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover group-hover:scale-110 fast-trans" alt="Coach James">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-3"><div><h3 class="font-black text-lg">James Wilson</h3><p class="text-stone-400 text-sm">HIIT & Conditioning</p></div><span class="text-gold font-black">4.7 ★</span></div>
+              <p class="text-stone-400 text-sm mb-4">6+ years • 300+ success stories • High intensity</p>
+              <div class="flex gap-2"><button class="flex-1 bg-gold text-black px-3 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Book Session</button><a href="coach.html" class="flex-1 glass px-3 py-2 rounded-lg font-semibold text-sm text-center">View Profile</a></div>
+            </div>
+          </article>
+
+          <!-- Coach 5 -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer group">
+            <img src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover group-hover:scale-110 fast-trans" alt="Coach Sofia">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-3"><div><h3 class="font-black text-lg">Sofia Martinez</h3><p class="text-stone-400 text-sm">Nutrition & Wellness</p></div><span class="text-gold font-black">4.9 ★</span></div>
+              <p class="text-stone-400 text-sm mb-4">7+ years • Registered Dietitian • Meal planning</p>
+              <div class="flex gap-2"><button class="flex-1 bg-gold text-black px-3 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Book Session</button><a href="coach.html" class="flex-1 glass px-3 py-2 rounded-lg font-semibold text-sm text-center">View Profile</a></div>
+            </div>
+          </article>
+
+          <!-- Coach 6 -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer group">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover group-hover:scale-110 fast-trans" alt="Coach David">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-3"><div><h3 class="font-black text-lg">David Park</h3><p class="text-stone-400 text-sm">Transformation Coach</p></div><span class="text-gold font-black">4.8 ★</span></div>
+              <p class="text-stone-400 text-sm mb-4">9+ years • 600+ transformations • Motivation expert</p>
+              <div class="flex gap-2"><button class="flex-1 bg-gold text-black px-3 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Book Session</button><a href="coach.html" class="flex-1 glass px-3 py-2 rounded-lg font-semibold text-sm text-center">View Profile</a></div>
+            </div>
+          </article>
+
+          <!-- Coach 7 -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer group">
+            <img src="https://images.unsplash.com/photo-1489156991033-d782f9a00b5b?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover group-hover:scale-110 fast-trans" alt="Coach Emma">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-3"><div><h3 class="font-black text-lg">Emma Cross</h3><p class="text-stone-400 text-sm">Functional Fitness</p></div><span class="text-gold font-black">5.0 ★</span></div>
+              <p class="text-stone-400 text-sm mb-4">11+ years • CrossFit Level 2 • Movement quality</p>
+              <div class="flex gap-2"><button class="flex-1 bg-gold text-black px-3 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Book Session</button><a href="coach.html" class="flex-1 glass px-3 py-2 rounded-lg font-semibold text-sm text-center">View Profile</a></div>
+            </div>
+          </article>
+
+          <!-- Coach 8 -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer group">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover group-hover:scale-110 fast-trans" alt="Coach Alex">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-3"><div><h3 class="font-black text-lg">Alex Thompson</h3><p class="text-stone-400 text-sm">Bodybuilding Coach</p></div><span class="text-gold font-black">4.9 ★</span></div>
+              <p class="text-stone-400 text-sm mb-4">13+ years • Competitive prep • Physique coaching</p>
+              <div class="flex gap-2"><button class="flex-1 bg-gold text-black px-3 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Book Session</button><a href="coach.html" class="flex-1 glass px-3 py-2 rounded-lg font-semibold text-sm text-center">View Profile</a></div>
+            </div>
+          </article>
+
+          <!-- Coach 9 -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer group">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&auto=format&fit=crop" class="w-full h-64 object-cover group-hover:scale-110 fast-trans" alt="Coach Jessica">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-3"><div><h3 class="font-black text-lg">Jessica Ryan</h3><p class="text-stone-400 text-sm">Women's Strength</p></div><span class="text-gold font-black">4.8 ★</span></div>
+              <p class="text-stone-400 text-sm mb-4">8+ years • Women's empowerment • Powerlifting</p>
+              <div class="flex gap-2"><button class="flex-1 bg-gold text-black px-3 py-2 rounded-lg font-semibold text-sm hover:scale-105 fast-trans">Book Session</button><a href="coach.html" class="flex-1 glass px-3 py-2 rounded-lg font-semibold text-sm text-center">View Profile</a></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="glass rounded-3xl p-8">
+          <div class="grid md:grid-cols-3 gap-6 text-center">
+            <div><div class="text-4xl font-black text-gold">250+</div><p class="text-stone-400 mt-2">Active Coaching Sessions</p></div>
+            <div><div class="text-4xl font-black text-gold">4.8★</div><p class="text-stone-400 mt-2">Average Coach Rating</p></div>
+            <div><div class="text-4xl font-black text-gold">2000+</div><p class="text-stone-400 mt-2">Member Reviews</p></div>
+          </div>
+        </div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

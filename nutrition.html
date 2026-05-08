@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nutrition — GoldTech</title>
+  <script>tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#f5b041' } }, fontFamily: { display:['Poppins','Inter','system-ui','sans-serif'] } } } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({title:'Nutrition'});
+    Components.init();
+    document.getElementById('page-content').innerHTML = `
+      <div class="space-y-8">
+        <div class="glass rounded-3xl p-8">
+          <div class="text-gold text-xs font-bold uppercase tracking-wider mb-2">Daily Nutrition</div>
+          <h1 class="text-3xl font-black mb-1">Macro & Calorie Tracking</h1>
+          <p class="text-stone-300">Monitor your daily intake aligned with your fitness goals</p>
+        </div>
+
+        <!-- Today's Summary -->
+        <div class="glass rounded-3xl p-8">
+          <div class="text-2xl font-black mb-6">Today's Summary</div>
+          <div class="grid md:grid-cols-4 gap-4 mb-6">
+            <div class="text-center">
+              <div class="text-4xl font-black text-gold">1,890</div>
+              <div class="text-stone-400 text-sm mt-2">Calories Consumed</div>
+              <div class="text-emerald-400 text-xs mt-2">310 under goal</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-black text-emerald-400">165g</div>
+              <div class="text-stone-400 text-sm mt-2">Protein</div>
+              <div class="text-emerald-400 text-xs mt-2">+15g over goal</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-black text-sky-400">185g</div>
+              <div class="text-stone-400 text-sm mt-2">Carbohydrates</div>
+              <div class="text-stone-400 text-xs mt-2">45g remaining</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-black text-orange-400">52g</div>
+              <div class="text-stone-400 text-sm mt-2">Fat</div>
+              <div class="text-emerald-400 text-xs mt-2">6g under goal</div>
+            </div>
+          </div>
+
+          <!-- Macro Breakdown -->
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between mb-2"><span>Protein</span><span class="text-gold">165g / 150g</span></div>
+              <div class="h-3 bg-white/10 rounded-full overflow-hidden"><div class="w-full h-full bg-emerald-400 rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-2"><span>Carbohydrates</span><span class="text-sky-400">185g / 230g</span></div>
+              <div class="h-3 bg-white/10 rounded-full overflow-hidden"><div class="w-4/5 h-full bg-sky-400 rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-2"><span>Fat</span><span class="text-orange-400">52g / 58g</span></div>
+              <div class="h-3 bg-white/10 rounded-full overflow-hidden"><div class="w-5/6 h-full bg-orange-400 rounded-full"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Meals Logged -->
+        <div class="glass rounded-3xl p-8">
+          <h2 class="text-2xl font-black mb-6">Meals Today</h2>
+          <div class="space-y-4">
+            <div class="glass rounded-xl p-5 flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=80&auto=format&fit=crop" class="w-16 h-16 rounded-lg object-cover" alt="Breakfast">
+                <div>
+                  <div class="font-bold text-lg">Breakfast</div>
+                  <div class="text-stone-400 text-sm">Oatmeal, eggs, berries • 7:30 AM</div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="font-black text-lg">485 kcal</div>
+                <div class="text-stone-400 text-xs">P: 22g | C: 65g | F: 12g</div>
+              </div>
+            </div>
+
+            <div class="glass rounded-xl p-5 flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=80&auto=format&fit=crop" class="w-16 h-16 rounded-lg object-cover" alt="Snack">
+                <div>
+                  <div class="font-bold text-lg">Snack</div>
+                  <div class="text-stone-400 text-sm">Protein shake, banana • 10:30 AM</div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="font-black text-lg">310 kcal</div>
+                <div class="text-stone-400 text-xs">P: 35g | C: 38g | F: 4g</div>
+              </div>
+            </div>
+
+            <div class="glass rounded-xl p-5 flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=80&auto=format&fit=crop" class="w-16 h-16 rounded-lg object-cover" alt="Lunch">
+                <div>
+                  <div class="font-bold text-lg">Lunch</div>
+                  <div class="text-stone-400 text-sm">Grilled chicken, rice, broccoli • 1:00 PM</div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="font-black text-lg">620 kcal</div>
+                <div class="text-stone-400 text-xs">P: 62g | C: 72g | F: 8g</div>
+              </div>
+            </div>
+
+            <div class="glass rounded-xl p-5 flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1599599810694-b5ac4dd8b4ba?q=80&w=80&auto=format&fit=crop" class="w-16 h-16 rounded-lg object-cover" alt="Dinner">
+                <div>
+                  <div class="font-bold text-lg">Dinner</div>
+                  <div class="text-stone-400 text-sm">Salmon, sweet potato, veggies • 6:30 PM</div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="font-black text-lg">475 kcal</div>
+                <div class="text-stone-400 text-xs">P: 46g | C: 45g | F: 12g</div>
+              </div>
+            </div>
+          </div>
+
+          <button class="w-full mt-6 glass px-6 py-3 rounded-xl font-bold text-gold hover:bg-white/10 fast-trans">+ Log New Meal</button>
+        </div>
+
+        <!-- Hydration -->
+        <div class="glass rounded-3xl p-8">
+          <h2 class="text-2xl font-black mb-6">Daily Hydration</h2>
+          <div class="text-center mb-6">
+            <div class="text-6xl font-black text-sky-400">2.2L</div>
+            <div class="text-stone-400 mt-2">Consumed today • 2.5L goal</div>
+          </div>
+          <div class="flex gap-2 justify-between">
+            <div class="flex-1 h-32 bg-sky-400/20 rounded-lg border-2 border-sky-400/50 flex items-end justify-center pb-4">
+              <div class="w-1/2 h-5/6 bg-sky-400 rounded"></div>
+            </div>
+            <div class="flex-1 h-32 bg-sky-400/20 rounded-lg border-2 border-sky-400/50 flex items-end justify-center pb-4">
+              <div class="w-full h-3/4 bg-sky-400 rounded"></div>
+            </div>
+            <div class="flex-1 h-32 bg-sky-400/20 rounded-lg border-2 border-sky-400/50 flex items-end justify-center pb-4">
+              <div class="w-5/6 h-4/5 bg-sky-400 rounded"></div>
+            </div>
+            <div class="flex-1 h-32 bg-white/10 rounded-lg flex items-end justify-center pb-4">
+              <div class="w-1/3 h-1/3 bg-stone-500 rounded"></div>
+            </div>
+          </div>
+          <div class="flex justify-between mt-4 text-xs text-stone-400">
+            <span>Morning</span><span>Midday</span><span>Evening</span><span>Remaining</span>
+          </div>
+        </div>
+
+        <!-- Meal Plans -->
+        <div class="glass rounded-3xl p-8">
+          <h2 class="text-2xl font-black mb-6">Nutrition Plans</h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="glass rounded-xl p-6 border border-gold/30 cursor-pointer hover:bg-gold/5 fast-trans">
+              <div class="font-bold text-lg text-gold mb-2">Muscle Building Plan</div>
+              <div class="text-stone-400 text-sm mb-4">2,200 kcal • High protein • CURRENT</div>
+              <button class="text-gold text-sm font-semibold">View Details →</button>
+            </div>
+            <div class="glass rounded-xl p-6 border border-white/10 cursor-pointer hover:bg-white/5 fast-trans">
+              <div class="font-bold text-lg mb-2">Fat Loss Plan</div>
+              <div class="text-stone-400 text-sm mb-4">1,800 kcal • Cardio friendly</div>
+              <button class="text-stone-300 text-sm font-semibold">Switch Plan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

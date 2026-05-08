@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Support — GoldTech</title>
+  <script>tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#f5b041' } }, fontFamily: { display:['Poppins','Inter','system-ui','sans-serif'] } } } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({title:'Support'});
+    Components.init();
+    document.getElementById('page-content').innerHTML = `
+      <div class="glass rounded-2xl p-6">
+        <div class="text-stone-400 text-xs">Contact & Support</div>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4"><div class="glass p-4 rounded-lg"><form class="grid gap-3"><label class="text-stone-400 text-xs">Message<textarea class="glass mt-1 p-2 rounded-md bg-transparent text-white"></textarea></label><button class="bg-gold text-black px-3 py-2 rounded-lg">Send</button></form></div><div class="glass p-4 rounded-lg"><div class="text-stone-400 text-xs">Help</div><ul class="mt-2 text-stone-400"><li>FAQ</li><li>Contact via WhatsApp</li></ul></div></div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

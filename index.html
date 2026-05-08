@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GoldTech Fitness — Home</title>
+  <meta http-equiv="refresh" content="0; url=landing.html" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: { DEFAULT: '#f5b041' },
+          },
+          fontFamily: { display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased text-sm">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({ title: 'GoldTech Fitness — Home' });
+    Components.init();
+
+    document.getElementById('page-content').innerHTML = `
+      <section class="relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute -top-24 right-0 w-80 h-80 rounded-full bg-gold/10 blur-3xl"></div>
+          <div class="absolute top-40 -left-24 w-72 h-72 rounded-full bg-white/5 blur-3xl"></div>
+        </div>
+
+        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-8 space-y-6">
+            <div class="glass rounded-[2rem] p-7 md:p-10 shadow-glass-strong hover-lift fast-trans">
+              <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-stone-300">
+                <span class="w-2 h-2 rounded-full bg-gold"></span>
+                Premium gym experience built for modern members
+              </div>
+
+              <div class="mt-6 max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight text-white">
+                  Train in a space that feels as premium as the results you want.
+                </h1>
+                    <div style="padding:32px;color:#fff;font-family:Poppins,system-ui;background:linear-gradient(180deg,#070708 0%,#0f0f10 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;">
+                      <div>
+                        <div style="color:#f5b041;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:12px;">GoldTech Gym</div>
+                        <h1 style="font-size:42px;line-height:1.1;margin:16px 0 12px;font-weight:900;max-width:900px;">Launching the landing page now...</h1>
+                        <p style="color:#c7c7c7;max-width:720px;margin:0 auto 28px;font-size:18px;line-height:1.7;">If your browser does not redirect automatically, open <a href="landing.html" style="color:#f5b041;">landing.html</a>.</p>
+                        <a href="landing.html" style="display:inline-block;background:#f5b041;color:#000;padding:14px 22px;border-radius:16px;font-weight:700;text-decoration:none;">Go to Landing Page</a>
+                      </div>
+                    </div>
+              </div>

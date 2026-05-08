@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Machines — GoldTech</title>
+  <script>tailwind.config={theme:{extend:{colors:{gold:{DEFAULT:'#f5b041'}},fontFamily:{display:['Poppins','Inter','system-ui','sans-serif']}}}}</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased">
+  <div id="app-root"></div>
+  <script src="assets/js/components.js"></script>
+  <script>
+    Components.renderShell({title:'Smart Machines'});
+    Components.init();
+    document.getElementById('page-content').innerHTML = `
+      <div class="space-y-8">
+        <div class="glass rounded-3xl p-8">
+          <div class="flex items-center justify-between mb-2"><div class="text-gold text-xs font-bold uppercase tracking-wider">Equipment Library</div><div class="text-stone-400 text-sm">21 machines available</div></div>
+          <h1 class="text-3xl font-black mb-1">Smart Machines & Equipment</h1>
+          <p class="text-stone-300">Scan QR codes for instant tutorials, form cues, and safety reminders</p>
+          <div class="mt-6 flex gap-2 flex-wrap"><button class="glass px-4 py-2 rounded-xl text-sm border border-gold/30 text-gold">All Equipment</button><button class="glass px-4 py-2 rounded-xl text-sm border border-white/10 text-stone-300">Chest</button><button class="glass px-4 py-2 rounded-xl text-sm border border-white/10 text-stone-300">Legs</button><button class="glass px-4 py-2 rounded-xl text-sm border border-white/10 text-stone-300">Back</button></div>
+        </div>
+
+        <!-- Machine Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Chest Press Machine -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=500&auto=format&fit=crop" class="w-full h-48 object-cover" alt="Chest Press">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-3"><div><h3 class="font-black text-lg">Chest Press Machine</h3><p class="text-stone-400 text-sm">Model: Cybex X9</p></div><span class="text-emerald-400 text-xs font-bold bg-emerald-400/10 px-2 py-1 rounded">Available</span></div>
+              <p class="text-stone-300 text-sm mb-4">Guided machine for safe chest development. Perfect for isolating chest with controlled range of motion.</p>
+              <div class="flex gap-2 text-xs">
+                <button class="flex-1 bg-gold text-black px-3 py-2 rounded-lg font-semibold hover:scale-105 fast-trans">Scan QR</button>
+                <button class="flex-1 glass px-3 py-2 rounded-lg hover:bg-white/10 fast-trans">Tutorial</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Leg Press -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=500&auto=format&fit=crop" class="w-full h-48 object-cover" alt="Leg Press">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-3"><div><h3 class="font-black text-lg">Leg Press Machine</h3><p class="text-stone-400 text-sm">Model: Power Tech</p></div><span class="text-emerald-400 text-xs font-bold bg-emerald-400/10 px-2 py-1 rounded">Available</span></div>
+              <p class="text-stone-300 text-sm mb-4">Heavy-duty machine for leg strength. Load capacity up to 600kg with adjustable foot placement.</p>
+              <div class="flex gap-2 text-xs">
+                <button class="flex-1 bg-gold text-black px-3 py-2 rounded-lg font-semibold hover:scale-105 fast-trans">Scan QR</button>
+                <button class="flex-1 glass px-3 py-2 rounded-lg hover:bg-white/10 fast-trans">Tutorial</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cable Machine -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=500&auto=format&fit=crop" class="w-full h-48 object-cover" alt="Cable Machine">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-3"><div><h3 class="font-black text-lg">Functional Trainer</h3><p class="text-stone-400 text-sm">Model: Precor Dual</p></div><span class="text-emerald-400 text-xs font-bold bg-emerald-400/10 px-2 py-1 rounded">Available</span></div>
+              <p class="text-stone-300 text-sm mb-4">Dual cable machine for complex movements. Perfect for functional training and compound exercises.</p>
+              <div class="flex gap-2 text-xs">
+                <button class="flex-1 bg-gold text-black px-3 py-2 rounded-lg font-semibold hover:scale-105 fast-trans">Scan QR</button>
+                <button class="flex-1 glass px-3 py-2 rounded-lg hover:bg-white/10 fast-trans">Tutorial</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Lat Pulldown -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1552258987-868cb78106f7?q=80&w=500&auto=format&fit=crop" class="w-full h-48 object-cover" alt="Lat Pulldown">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-3"><div><h3 class="font-black text-lg">Lat Pulldown Machine</h3><p class="text-stone-400 text-sm">Model: Cybex Arc</p></div><span class="text-emerald-400 text-xs font-bold bg-emerald-400/10 px-2 py-1 rounded">Available</span></div>
+              <p class="text-stone-300 text-sm mb-4">Guided back machine for lat development. Load range 20-180kg with smooth, natural arc motion.</p>
+              <div class="flex gap-2 text-xs">
+                <button class="flex-1 bg-gold text-black px-3 py-2 rounded-lg font-semibold hover:scale-105 fast-trans">Scan QR</button>
+                <button class="flex-1 glass px-3 py-2 rounded-lg hover:bg-white/10 fast-trans">Tutorial</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Seated Row -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?q=80&w=500&auto=format&fit=crop" class="w-full h-48 object-cover" alt="Seated Row">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-3"><div><h3 class="font-black text-lg">Seated Row Machine</h3><p class="text-stone-400 text-sm">Model: Hammer Strength</p></div><span class="text-orange-400 text-xs font-bold bg-orange-400/10 px-2 py-1 rounded">In Use</span></div>
+              <p class="text-stone-300 text-sm mb-4">Heavy-duty row machine. Great for back thickness with independent arm control.</p>
+              <div class="flex gap-2 text-xs">
+                <button class="flex-1 bg-stone-600 text-white px-3 py-2 rounded-lg font-semibold cursor-not-allowed" disabled>In Use (3 min)</button>
+                <button class="flex-1 glass px-3 py-2 rounded-lg hover:bg-white/10 fast-trans">Tutorial</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Leg Curl -->
+          <article class="glass rounded-2xl overflow-hidden hover-lift fast-trans cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=500&auto=format&fit=crop" class="w-full h-48 object-cover" alt="Leg Curl">
+            <div class="p-5">
+              <div class="flex items-start justify-between mb-3"><div><h3 class="font-black text-lg">Leg Curl Machine</h3><p class="text-stone-400 text-sm">Model: Nautilus</p></div><span class="text-emerald-400 text-xs font-bold bg-emerald-400/10 px-2 py-1 rounded">Available</span></div>
+              <p class="text-stone-300 text-sm mb-4">Isolated hamstring machine. Adjustable seat and adjustable range of motion.</p>
+              <div class="flex gap-2 text-xs">
+                <button class="flex-1 bg-gold text-black px-3 py-2 rounded-lg font-semibold hover:scale-105 fast-trans">Scan QR</button>
+                <button class="flex-1 glass px-3 py-2 rounded-lg hover:bg-white/10 fast-trans">Tutorial</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Equipment Status -->
+        <div class="glass rounded-3xl p-8">
+          <h2 class="text-2xl font-black mb-6">Equipment Status</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <div class="text-4xl font-black text-emerald-400 mb-2">18</div>
+              <p class="text-stone-400">Equipment Available</p>
+              <div class="w-24 h-2 bg-white/10 rounded-full mx-auto mt-3 overflow-hidden"><div class="w-5/6 h-full bg-emerald-400 rounded-full"></div></div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-black text-orange-400 mb-2">3</div>
+              <p class="text-stone-400">Currently In Use</p>
+              <div class="w-24 h-2 bg-white/10 rounded-full mx-auto mt-3 overflow-hidden"><div class="w-1/6 h-full bg-orange-400 rounded-full"></div></div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-black text-rose-400 mb-2">1</div>
+              <p class="text-stone-400">Needs Maintenance</p>
+              <div class="w-24 h-2 bg-white/10 rounded-full mx-auto mt-3 overflow-hidden"><div class="w-1/12 h-full bg-rose-400 rounded-full"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="glass rounded-3xl p-8">
+          <h2 class="text-2xl font-black mb-6">Pro Tips</h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="border-l-4 border-gold pl-4">
+              <div class="font-bold text-lg mb-2">Always scan QR codes</div>
+              <p class="text-stone-400">Each machine has a QR code for form tutorials and safety reminders.</p>
+            </div>
+            <div class="border-l-4 border-gold pl-4">
+              <div class="font-bold text-lg mb-2">Check equipment status</div>
+              <p class="text-stone-400">The app shows real-time availability. Peak hours are 6-8 PM.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

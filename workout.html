@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GoldTech Fitness — Workout Program</title>
+
+  <!-- Tailwind CDN + config (matches dashboard) -->
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { gold: { DEFAULT: '#f5b041' } }, fontFamily: { display:['Poppins','Inter','system-ui','sans-serif'] } } }
+    </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--gold:#f5b041}
+    html,body{height:100%}
+    body{font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;background:linear-gradient(180deg,#070708 0%,#0f0f10 60%);color:#fff}
+    .glass{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.015));border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(8px) saturate(110%)}
+    .hover-lift:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(2,6,23,0.6),0 0 40px rgba(245,176,65,0.04)}
+    .fast-trans{transition:all 180ms cubic-bezier(.2,.9,.2,1)}
+    .dash-anim{stroke-dasharray:1000;stroke-dashoffset:1000;animation:draw 900ms ease forwards}
+    @keyframes draw{to{stroke-dashoffset:0}}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .accordion-enter{max-height:0;overflow:hidden;transition:max-height 220ms ease}
+    .accordion-open{max-height:800px}
+    .check-anim{transition:transform 160ms,opacity 160ms}
+    .glow-amber{box-shadow:0 6px 30px rgba(245,176,65,0.12)}
+  </style>
+</head>
+<body class="antialiased text-sm">
+
+<!-- Reused sidebar + header (consistent with dashboard) -->
+<div class="min-h-screen flex">
+  <aside class="hidden md:flex flex-col w-72 p-5 gap-6 glass rounded-2xl sticky top-6 m-6 h-[calc(100vh-48px)]">
+    <div class="flex items-center gap-3">
+      <div class="rounded-xl p-3 bg-gradient-to-br from-[#1b1b1d] to-[#111112]"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="1" y="1" width="22" height="22" rx="6" stroke="#f5b041" stroke-width="1.2"/></svg></div>
+      <div><div class="text-white font-semibold text-lg">GoldTech</div><div class="text-stone-400 text-xs uppercase tracking-widest">Fitness OS</div></div>
+    </div>
+    <nav aria-label="Primary" class="flex-1">
+      <ul class="space-y-1 text-sm">
+        <li><a href="index.html" class="group flex items-center gap-3 p-3 rounded-xl fast-trans hover:bg-white/3">Dashboard</a></li>
+        <li><a href="#" class="group flex items-center gap-3 p-3 rounded-xl fast-trans bg-white/3">Workouts</a></li>
+        <li><a href="#" class="group flex items-center gap-3 p-3 rounded-xl fast-trans">Programs</a></li>
+        <li><a href="#" class="group flex items-center gap-3 p-3 rounded-xl fast-trans">Coaches</a></li>
+        <li><a href="#" class="group flex items-center gap-3 p-3 rounded-xl fast-trans">InBody</a></li>
+        <li><a href="#" class="group flex items-center gap-3 p-3 rounded-xl fast-trans">Machines</a></li>
+        <li><a href="#" class="group flex items-center gap-3 p-3 rounded-xl fast-trans">Store</a></li>
+        <li><a href="#" class="group flex items-center gap-3 p-3 rounded-xl fast-trans">Stories</a></li>
+        <li><a href="#" class="group flex items-center gap-3 p-3 rounded-xl fast-trans">Membership</a></li>
+        <li><a href="#" class="group flex items-center gap-3 p-3 rounded-xl fast-trans">Settings</a></li>
+      </ul>
+    </nav>
+    <div class="pt-3 border-t border-white/6 text-sm"><div class="text-stone-400">Active Membership</div><div class="mt-2 flex items-center justify-between"><div><div class="text-white font-semibold">Gold Elite</div><div class="text-stone-400 text-xs">Valid until May 2027</div></div><div class="bg-gradient-to-br from-[#2a2a2a]/80 to-[#161616]/60 p-2 rounded-lg text-gold">●</div></div></div>
+  </aside>
+
+  <main class="flex-1 p-5 md:p-8 overflow-y-auto safe-bottom">
+    <header class="sticky top-6 z-30 glass rounded-2xl p-3 md:p-4 mb-6 flex items-center justify-between fast-trans">
+      <div class="flex items-center gap-4">
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-white/3" aria-label="Open menu"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 7h16M4 12h16M4 17h16" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="hidden md:flex items-center gap-4"><h1 class="text-white font-extrabold text-lg">Push Pull Legs — Program</h1><div class="text-stone-400 text-sm">Follow and track today's session</div></div>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="relative hidden sm:flex items-center"><label for="search" class="sr-only">Search workouts</label><input id="search" class="glass rounded-xl px-3 py-2 pl-10 pr-3 w-64 bg-transparent text-white placeholder:opacity-60 fast-trans" placeholder="Search exercises, machines, coaches" /></div>
+        <div class="flex items-center gap-3"><div class="text-right"><div class="text-white font-semibold">Alex Morgan</div><div class="text-stone-400 text-xs">Member • Gold Elite</div></div><button id="profileBtn" class="rounded-full bg-gradient-to-br from-[#151515] to-[#0f0f0f] p-1"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=64&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="avatar" class="w-10 h-10 rounded-full object-cover border border-white/6"/></button></div>
+      </div>
+    </header>
+
+    <!-- Page grid: main + right sticky widget -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-8 space-y-6">
+
+        <!-- Workout header -->
+        <div class="glass rounded-2xl p-6 shadow-glass-strong hover-lift fast-trans">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <div class="text-stone-400 text-xs uppercase tracking-widest">Program</div>
+              <div class="text-2xl md:text-3xl font-extrabold text-white">Push Pull Legs — Push Day</div>
+              <div class="mt-2 text-stone-400 text-sm">Day 5 • Focus: Chest & Shoulders</div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="text-center">
+                <div class="text-stone-400 text-xs">Duration</div>
+                <div class="text-white font-bold">52 min</div>
+              </div>
+              <div class="text-center">
+                <div class="text-stone-400 text-xs">Est. Cal</div>
+                <div class="text-white font-bold">420 kcal</div>
+              </div>
+              <div class="text-center">
+                <div class="text-stone-400 text-xs">Difficulty</div>
+                <div class="text-white font-bold">Advanced</div>
+              </div>
+              <div class="text-center">
+                <div class="text-stone-400 text-xs">Progress</div>
+                <div class="text-white font-bold">45%</div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button id="startWorkout" class="bg-gradient-to-br from-[#2b2b2b] to-[#0f0f0f] text-gold px-4 py-2 rounded-lg font-semibold">Start Workout</button>
+                <button id="resumeWorkout" class="glass px-4 py-2 rounded-lg font-semibold">Resume</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Split tabs -->
+        <div class="glass rounded-2xl p-3 fast-trans">
+          <div class="flex gap-2 overflow-auto">
+            <button class="tab-btn active-tab px-4 py-2 rounded-full text-sm font-semibold">Push Day</button>
+            <button class="tab-btn px-4 py-2 rounded-full text-sm font-semibold">Pull Day</button>
+            <button class="tab-btn px-4 py-2 rounded-full text-sm font-semibold">Leg Day</button>
+            <button class="tab-btn px-4 py-2 rounded-full text-sm font-semibold">Upper Body</button>
+            <button class="tab-btn px-4 py-2 rounded-full text-sm font-semibold">Lower Body</button>
+            <button class="tab-btn px-4 py-2 rounded-full text-sm font-semibold">Full Body</button>
+          </div>
+        </div>
+
+        <!-- Exercises list -->
+        <div id="exerciseList" class="space-y-4">
+          <!-- Exercise card (reusable) -->
+          <!-- Bench Press -->
+          <article class="exercise-card glass rounded-2xl p-4 hover-lift fast-trans">
+            <div class="flex items-start gap-4">
+              <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001d4?q=80&w=200&auto=format&fit=crop&s=placeholder" alt="Barbell Bench Press" class="w-20 h-20 rounded-lg object-cover border border-white/6" />
+              <div class="flex-1">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <div class="text-white font-semibold">Barbell Bench Press</div>
+                    <div class="text-stone-400 text-xs mt-1">Target: Chest • Sets: 4 • Reps: 6-8</div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="text-stone-400 text-xs text-right">Rest 90s</div>
+                    <div class="text-white font-bold">80 kg</div>
+                    <button class="expand-btn glass px-3 py-2 rounded-lg text-sm">Details</button>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" class="sr-only complete-checkbox" />
+                      <div class="w-10 h-6 bg-white/6 rounded-full peer-checked:bg-gold fast-trans"></div>
+                      <span class="absolute left-1 top-0.5 w-5 h-5 bg-white rounded-full transform peer-checked:translate-x-4 fast-trans"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Expanded details -->
+                <div class="details mt-3 accordion-enter fast-trans">
+                  <div class="text-stone-400 text-sm">Instructions: Lie flat on bench, grip slightly wider than shoulder. Lower bar to chest under control, pause briefly, and press up explosively.</div>
+                  <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-2">
+                    <div class="glass p-3 rounded-lg"><div class="text-stone-400 text-xs">Common mistakes</div><ul class="text-sm text-stone-400 mt-2"><li>Flared elbows</li><li>Bouncing off chest</li></ul></div>
+                    <div class="glass p-3 rounded-lg"><div class="text-stone-400 text-xs">Safety tips</div><ul class="text-sm text-stone-400 mt-2"><li>Use spotter for heavy sets</li><li>Control tempo</li></ul></div>
+                  </div>
+                  <div class="mt-3 flex items-center gap-2">
+                    <button class="glass px-3 py-2 rounded-lg" data-action="qr">Scan QR</button>
+                    <button class="glass px-3 py-2 rounded-lg" data-action="watch">Watch Tutorial</button>
+                    <div class="text-stone-400 text-xs ml-auto">Machine: M-231</div>
+                  </div>
+                </div>
+
+                <!-- Weight & reps inputs -->
+                <form class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-2 items-center">
+                  <label class="text-stone-400 text-xs">Weight (kg)
+                    <input type="number" class="glass w-full mt-1 px-2 py-1 rounded-md bg-transparent text-white" value="80" />
+                  </label>
+                  <label class="text-stone-400 text-xs">Reps
+                    <input type="number" class="glass w-full mt-1 px-2 py-1 rounded-md bg-transparent text-white" value="6" />
+                  </label>
+                  <label class="text-stone-400 text-xs">Notes
+                    <input type="text" class="glass w-full mt-1 px-2 py-1 rounded-md bg-transparent text-white" placeholder="e.g. felt strong" />
+                  </label>
+                </form>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bent-over Row -->
+          <article class="exercise-card glass rounded-2xl p-4 hover-lift fast-trans">
+            <div class="flex items-start gap-4">
+              <img src="https://images.unsplash.com/photo-1541872703-598f3b0b4a62?q=80&w=200&auto=format&fit=crop&s=placeholder" alt="Bent-over Row" class="w-20 h-20 rounded-lg object-cover border border-white/6" />
+              <div class="flex-1">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <div class="text-white font-semibold">Bent-over Barbell Row</div>
+                    <div class="text-stone-400 text-xs mt-1">Target: Back • Sets: 4 • Reps: 6-8</div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="text-stone-400 text-xs text-right">Rest 90s</div>
+                    <div class="text-white font-bold">100 kg</div>
+                    <button class="expand-btn glass px-3 py-2 rounded-lg text-sm">Details</button>
+                    <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" class="sr-only complete-checkbox" /><div class="w-10 h-6 bg-white/6 rounded-full fast-trans"></div><span class="absolute left-1 top-0.5 w-5 h-5 bg-white rounded-full transform fast-trans"></span></label>
+                  </div>
+                </div>
+                <div class="details mt-3 accordion-enter fast-trans hidden"><div class="text-stone-400 text-sm">Instructions: Hinge at hips, keep a flat back, pull bar towards lower ribs.</div></div>
+                <form class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-2 items-center"><input type="number" class="glass px-2 py-1 rounded-md bg-transparent text-white" value="100" /><input type="number" class="glass px-2 py-1 rounded-md bg-transparent text-white" value="6" /><input type="text" class="glass px-2 py-1 rounded-md bg-transparent text-white" placeholder="notes" /></form>
+              </div>
+            </div>
+          </article>
+
+          <!-- Overhead Press -->
+          <article class="exercise-card glass rounded-2xl p-4 hover-lift fast-trans">
+            <div class="flex items-start gap-4">
+              <img src="https://images.unsplash.com/photo-1594737625785-cb35a3df0b5e?q=80&w=200&auto=format&fit=crop&s=placeholder" alt="Overhead Press" class="w-20 h-20 rounded-lg object-cover border border-white/6" />
+              <div class="flex-1">
+                <div class="flex items-start justify-between gap-4"><div><div class="text-white font-semibold">Standing Overhead Press</div><div class="text-stone-400 text-xs mt-1">Target: Shoulders • Sets: 4 • Reps: 6</div></div><div class="flex items-center gap-2"><div class="text-stone-400 text-xs">Rest 120s</div><div class="text-white font-bold">54 kg</div><button class="expand-btn glass px-3 py-2 rounded-lg text-sm">Details</button><label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" class="sr-only complete-checkbox" /><div class="w-10 h-6 bg-white/6 rounded-full fast-trans"></div><span class="absolute left-1 top-0.5 w-5 h-5 bg-white rounded-full transform fast-trans"></span></label></div></div>
+                <div class="details mt-3 accordion-enter fast-trans hidden"><div class="text-stone-400 text-sm">Instructions: Engage core, drive bar overhead in a straight path.</div></div>
+                <form class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-2 items-center"><input type="number" class="glass px-2 py-1 rounded-md bg-transparent text-white" value="54" /><input type="number" class="glass px-2 py-1 rounded-md bg-transparent text-white" value="6" /><input type="text" class="glass px-2 py-1 rounded-md bg-transparent text-white" placeholder="notes" /></form>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Sticky workout tracking widget -->
+      <aside class="lg:col-span-4">
+        <div id="tracker" class="glass rounded-2xl p-5 sticky top-6 shadow-glass-strong fast-trans hover-lift">
+          <div class="flex items-center justify-between"><div><div class="text-stone-400 text-xs">Workout Tracker</div><div class="text-white font-extrabold text-lg">Push Day • In Progress</div></div><div class="text-stone-400 text-xs">12:34</div></div>
+          <div class="mt-4">
+            <div class="text-stone-400 text-xs">Completed</div>
+            <div id="completedCount" class="text-white font-bold text-2xl mt-1">0</div>
+            <div class="text-stone-400 text-xs mt-2">Remaining: <span id="remainingCount">3</span></div>
+          </div>
+          <div class="mt-4 flex items-center gap-3">
+            <div class="relative w-20 h-20">
+              <svg viewBox="0 0 36 36" class="w-full h-full"><path d="M18 2a16 16 0 1 0 0 32" fill="none" stroke="#111" stroke-width="4"/><path id="progArc" d="M18 2a16 16 0 1 0 0 32" fill="none" stroke="#f5b041" stroke-width="4" stroke-dasharray="0 100" stroke-linecap="round"/></svg>
+              <div class="absolute inset-0 flex items-center justify-center text-center"><div><div id="progressPct" class="text-white font-bold text-lg">0%</div><div class="text-stone-400 text-xs">Progress</div></div></div>
+            </div>
+            <div class="flex-1">
+              <div class="text-stone-400 text-xs">Calories</div>
+              <div class="text-white font-bold text-lg">120 kcal</div>
+              <div class="mt-3 text-stone-400 text-xs">Hydration</div>
+              <div class="h-2 bg-white/6 rounded-full overflow-hidden mt-2"><div id="hydrationBar" class="h-full bg-gradient-to-r from-[#6fdc8d] to-[#2fd6a1] rounded-full" style="width:40%"></div></div>
+            </div>
+          </div>
+          <div class="mt-4 grid grid-cols-2 gap-2">
+            <button id="timerToggle" class="bg-gradient-to-br from-[#2b2b2b] to-[#0f0f0f] text-gold px-3 py-2 rounded-lg font-semibold">Start Timer</button>
+            <button id="endWorkout" class="glass px-3 py-2 rounded-lg font-semibold">End Workout</button>
+          </div>
+        </div>
+
+        <!-- Smart predictions -->
+        <div class="glass rounded-2xl p-4 mt-4 hover-lift fast-trans">
+          <div class="text-stone-400 text-xs">Smart Predictions</div>
+          <div class="text-white font-extrabold text-lg">Estimates & Recovery</div>
+          <div class="mt-3 grid grid-cols-1 gap-2">
+            <div class="glass p-3 rounded-lg"><div class="text-stone-400 text-xs">Next PR</div><div class="text-white font-bold">Bench +2.5 kg</div></div>
+            <div class="glass p-3 rounded-lg"><div class="text-stone-400 text-xs">Recovery Score</div><div class="text-white font-bold">76%</div></div>
+            <div class="glass p-3 rounded-lg"><div class="text-stone-400 text-xs">Consistency</div><div class="text-white font-bold">90%</div></div>
+          </div>
+        </div>
+
+        <!-- Muscle visualization -->
+        <div class="glass rounded-2xl p-4 mt-4 hover-lift fast-trans">
+          <div class="flex items-center justify-between"><div><div class="text-stone-400 text-xs">Target Muscles</div><div class="text-white font-extrabold text-lg">Active: Chest, Shoulders</div></div><div class="text-stone-400 text-xs">Session focus</div></div>
+          <div class="mt-3 flex items-center justify-center">
+            <!-- simple SVG body with highlighted areas -->
+            <svg viewBox="0 0 200 360" class="w-48 h-72">
+              <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#f5b041" stop-opacity="0.9"/><stop offset="1" stop-color="#e08922" stop-opacity="0.5"/></linearGradient></defs>
+              <g fill="#1a1a1a">
+                <rect x="84" y="20" width="32" height="40" rx="8" fill="#111" />
+                <!-- torso base -->
+                <rect x="60" y="60" width="80" height="120" rx="20" fill="#0d0d0d" />
+              </g>
+              <!-- highlight chest -->
+              <ellipse cx="100" cy="100" rx="44" ry="34" fill="url(#g1)" opacity="0.95" />
+              <!-- shoulders -->
+              <circle cx="60" cy="82" r="14" fill="url(#g1)" opacity="0.9" />
+              <circle cx="140" cy="82" r="14" fill="url(#g1)" opacity="0.9" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- QR Machine Training Panel -->
+        <div class="glass rounded-2xl p-4 mt-4 hover-lift fast-trans">
+          <div class="flex items-center justify-between"><div><div class="text-stone-400 text-xs">Machine Trainer</div><div class="text-white font-extrabold text-lg">Scan machine • Model X9</div></div><div class="text-stone-400 text-xs">M-231</div></div>
+          <div class="mt-3 text-stone-400 text-sm">Scan the QR on the machine to auto-load guided sets and safety tips.</div>
+          <div class="mt-3 flex gap-2"><button id="scanMachine" class="bg-gradient-to-br from-[#2b2b2b] to-[#0f0f0f] text-gold px-4 py-2 rounded-lg font-semibold">Scan QR</button><button id="watchMachine" class="glass px-4 py-2 rounded-lg">Watch Tutorial</button></div>
+        </div>
+
+      </aside>
+    </section>
+
+    <!-- Achievement popup container -->
+    <div id="achieves" class="fixed top-8 right-8 flex flex-col gap-3 z-50 pointer-events-none"></div>
+
+    <!-- Mobile floating action bar -->
+    <nav id="mobileNav" class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-48px)] md:hidden glass rounded-full p-2 flex items-center justify-between px-4 shadow-glass-strong safe-bottom">
+      <button class="flex flex-col items-center gap-1 text-stone-400"><svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="none"><path d="M3 13h8V3H3v10zM13 21h8V11h-8v10z" stroke="currentColor" stroke-width="1.2"/></svg><div class="text-xs text-white font-semibold">Home</div></button>
+      <button class="flex flex-col items-center gap-1 text-stone-400"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><div class="text-xs">Workouts</div></button>
+      <button class="flex flex-col items-center gap-1 text-stone-400"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M12 2v10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><div class="text-xs">Scan</div></button>
+      <button class="flex flex-col items-center gap-1 text-stone-400"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10z" stroke="currentColor" stroke-width="1.2"/></svg><div class="text-xs">Profile</div></button>
+    </nav>
+
+  </main>
+</div>
+
+<!-- Tutorial modal (reused) -->
+<div id="tutorialModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center p-4 z-50">
+  <div class="w-full max-w-3xl glass rounded-2xl p-4 relative">
+    <button id="closeTutorial" class="absolute right-4 top-4 p-2 rounded-md bg-white/4">✕</button>
+    <div class="text-white font-bold text-xl" id="tutorialTitle">Exercise Tutorial</div>
+    <div class="text-stone-400 text-sm mt-1">Video and pointers</div>
+    <div class="mt-4 bg-black rounded-lg overflow-hidden" style="height:360px;"><video controls class="w-full h-full bg-black object-cover"><source src="" /></video></div>
+  </div>
+</div>
+
+<!-- JS: tabs, accordion, tracker, timer, achievements -->
+<script>
+  // Tabs
+  document.querySelectorAll('.tab-btn').forEach(btn=>{ btn.addEventListener('click', ()=>{ document.querySelectorAll('.tab-btn').forEach(b=>{ b.classList.remove('bg-white/6','text-black','glow-amber','active-tab'); b.classList.add('text-stone-400'); }); btn.classList.add('bg-white/6','text-black','glow-amber','active-tab'); btn.classList.remove('text-stone-400'); }); });
+
+  // Accordion expand/collapse
+  document.querySelectorAll('.expand-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const card = btn.closest('.exercise-card');
+      const details = card.querySelector('.details');
+      const isOpen = details.classList.contains('accordion-open');
+      if(isOpen){ details.classList.remove('accordion-open'); details.classList.add('accordion-enter'); details.style.maxHeight = '0px'; }
+      else { details.classList.add('accordion-open'); details.classList.remove('accordion-enter'); details.style.maxHeight = details.scrollHeight + 'px'; }
+    });
+  });
+
+  // Completion checkboxes and achievement popup
+  function showAchievement(text, sub){
+    const container = document.getElementById('achieves');
+    const el = document.createElement('div');
+    el.className = 'glass rounded-xl p-3 pointer-events-auto fast-trans transform-gpu';
+    el.style.minWidth = '220px';
+    el.innerHTML = `<div class="flex items-center gap-3"><div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0f] flex items-center justify-center border border-white/5 text-gold font-bold">★</div><div><div class="text-white font-semibold">${text}</div><div class="text-stone-400 text-sm">${sub}</div></div></div>`;
+    container.appendChild(el);
+    el.animate([{ transform: 'translateY(-10px)', opacity:0 }, { transform: 'translateY(0)', opacity:1}], { duration:240, easing:'ease-out' });
+    setTimeout(()=>{ el.animate([{ transform: 'translateY(0)', opacity:1 }, { transform: 'translateY(-8px)', opacity:0}], { duration:380, easing:'ease-in' }); setTimeout(()=>el.remove(),420); },2200);
+  }
+
+  document.querySelectorAll('.complete-checkbox').forEach(cb=>{
+    cb.addEventListener('change', (e)=>{ const checked = e.target.checked; const card = e.target.closest('.exercise-card'); const title = card.querySelector('.text-white.font-semibold').textContent; updateCounts(); if(checked) showAchievement('+50 XP', 'Exercise completed: '+title); });
+  });
+
+  // Tracker progress ring and counts
+  function updateCounts(){
+    const total = document.querySelectorAll('.exercise-card').length;
+    const completed = document.querySelectorAll('.complete-checkbox:checked').length;
+    document.getElementById('completedCount').textContent = completed;
+    document.getElementById('remainingCount').textContent = Math.max(0, total-completed);
+    const pct = Math.round((completed/total)*100);
+    document.getElementById('progressPct').textContent = pct + '%';
+    const arc = document.getElementById('progArc');
+    const dash = (pct/100)*100;
+    arc.setAttribute('stroke-dasharray', dash + ' 100');
+  }
+  updateCounts();
+
+  // Timer
+  let timer = null; let seconds = 0; const timerToggle = document.getElementById('timerToggle');
+  function formatTime(s){ const m = Math.floor(s/60); const ss = s%60; return `${m}:${ss.toString().padStart(2,'0')}`; }
+  timerToggle.addEventListener('click', ()=>{
+    if(timer){ clearInterval(timer); timer = null; timerToggle.textContent = 'Start Timer'; }
+    else { timer = setInterval(()=>{ seconds++; document.querySelector('header .text-stone-400:last-child').textContent = formatTime(seconds); },1000); timerToggle.textContent = 'Pause Timer'; }
+  });
+
+  // Scan simulation and tutorial modal
+  document.querySelectorAll('[data-action="qr"]').forEach(b=>b.addEventListener('click', ()=>{ b.textContent='Scanning...'; setTimeout(()=>{ b.textContent='Scanned'; showAchievement('Machine Linked','QR scan successful'); },900); }));
+  document.querySelectorAll('[data-action="watch"]').forEach(b=>b.addEventListener('click', ()=>{ document.getElementById('tutorialModal').classList.remove('hidden'); document.getElementById('tutorialModal').classList.add('flex'); }));
+  document.getElementById('closeTutorial').addEventListener('click', ()=>{ document.getElementById('tutorialModal').classList.add('hidden'); document.getElementById('tutorialModal').classList.remove('flex'); });
+
+  // Mobile menu toggle
+  document.getElementById('mobileMenuBtn')?.addEventListener('click', ()=>{ document.querySelector('aside')?.classList.toggle('hidden'); });
+
+  // End workout
+  document.getElementById('endWorkout').addEventListener('click', ()=>{ if(timer) { clearInterval(timer); timer = null; } showAchievement('Workout Complete','+300 XP • Streak +1'); updateCounts(); });
+
+  // hydration sample update (simulate)
+  setInterval(()=>{ const el = document.getElementById('hydrationBar'); const w = Math.min(100, Math.max(10, parseInt(el.style.width||'40') + (Math.random()*6-2))); el.style.width = w + '%'; },6000);
+</script>
+
+<!-- Comments: This page reuses visual system from index.html. Replace media src and integrate real APIs as needed. -->
+
+</body>
+</html>
